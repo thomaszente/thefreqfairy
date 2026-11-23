@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Frequency Fairy</title>
+<meta name="description" content="Meet the Frequency Fairy. Gong, tuning forks, crystal bowls and angel messages, with sound healer Victoria.">
+<meta property="og:title" content="The Frequency Fairy">
+<meta property="og:description" content="Gong, tuning forks, crystal bowls and angel messages with the Frequency Fairy.">
+<meta property="og:image" content="https://freqfairy.vercel.app/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:url" content="https://freqfairy.vercel.app">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://freqfairy.vercel.app/og.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: tender, luminous, playful; a fairy who heals with sound
+   IDEA: a moonlit fairy sanctuary where a sacred gong hangs among flowering vines
+   PICTURE: the Frequency Fairy floating before her gong, wings shimmering, tuning-fork wand raised
+   COLOUR and TYPE: twilight violet, rose gold, pearl, iridescent aqua; Cormorant Garamond + Nunito Sans
+   LAYOUT: the Fairy and her words first; sanctuary rooms, frequencies and Victoria's sessions follow */
+:root{color-scheme:dark;--bg:#110b20;--bg2:#181030;--card:#1c1434;--ink:#f7eefa;--soft:#c4b7d8;
+ --gold:#e8b4a2;--gold2:#ffe2d8;--jade:#9fe3ec;--line:rgba(232,180,162,.3);--lav:#c9a7ff;
+ --moon:#9fe3ec;--gong:#f0b48a;--rose:#ff9fcf;--earth:#8fd68f;--star:#c9a7ff;--tune:var(--gold2)}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Nunito Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3,.brand,nav a,.btn,.chip,.who{font-family:'Cormorant Garamond',Georgia,serif}
+h1{font-size:clamp(34px,5vw,54px);line-height:1.05;margin:0 0 8px;color:var(--gold2)}
+h2{font-size:clamp(24px,3.2vw,32px);line-height:1.15;margin:0 0 12px;color:var(--gold2);text-wrap:balance}
+h3{font-size:19px;margin:0 0 4px;line-height:1.25;color:var(--gold2)}
+p{margin:0 0 12px;max-width:64ch}a{color:var(--gold2)}
+.band{padding:clamp(28px,4vw,56px) max(5vw,16px)}.wrap{max-width:1180px;margin:0 auto}
+header{position:sticky;top:0;z-index:20;background:rgba(17,11,32,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+header .wrap{max-width:calc(1180px + 2 * max(5vw,16px));display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px max(5vw,16px)}
+.brand{font-weight:700;font-size:20px;text-decoration:none;color:var(--gold2);display:flex;align-items:center;gap:8px;margin-right:auto}
+.brand svg{width:30px;height:30px}
+nav{display:flex;gap:2px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--ink);padding:10px 12px;border-radius:999px;font-weight:600;font-size:14px;min-height:44px;display:flex;align-items:center}
+nav a[aria-current=page]{background:var(--gold);color:#2a1424}
+.snd{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--gold2);cursor:pointer;display:grid;place-items:center}
+.snd svg{width:20px;height:20px}
+.btn{border:1px solid var(--gold);border-radius:999px;padding:11px 20px;min-height:44px;font-size:15px;font-weight:600;cursor:pointer;background:var(--gold);color:#2a1424}
+.btn.alt{background:transparent;color:var(--gold2)}
+.btn:hover{box-shadow:0 0 18px rgba(255,226,216,.45)}
+:focus-visible{outline:3px solid var(--gold2);outline-offset:2px}
+.temple{background:radial-gradient(ellipse at 40% 30%,#3a2160 0%,#1a1033 45%,var(--bg) 75%);border-bottom:1px solid var(--line)}
+.temple .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(16px,3vw,44px);align-items:center}
+.stage{position:relative;width:100%;max-width:620px;aspect-ratio:600/640;justify-self:center;touch-action:manipulation}
+.stage svg,.stage canvas{position:absolute;inset:0;width:100%;height:100%}
+.stage canvas{pointer-events:none}
+.tip{position:absolute;pointer-events:none;background:rgba(17,11,32,.92);border:1px solid var(--gold);color:var(--ink);padding:6px 12px;border-radius:12px;font-size:14px;white-space:nowrap;transform:translate(-50%,-130%);opacity:0;transition:opacity .2s;z-index:3}
+.tip b{color:var(--gold2);font-family:'Cormorant Garamond',serif}
+.hot{cursor:pointer}
+.ck .ring{opacity:0;transition:opacity .3s}.ck .core{opacity:0;transition:opacity .3s,r .3s}
+#master:hover .ck .core,.vision .ck .core{opacity:.55}
+.vision .ck .ring{opacity:.5}
+.ck:hover .core,.ck.on .core{opacity:1}.ck:hover .ring,.ck.on .ring{opacity:1}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 140s linear infinite}
+.spin.rev{animation-duration:90s;animation-direction:reverse}
+.float{animation:float 7s ease-in-out infinite}
+.deep .float{animation:floatHi 7s ease-in-out infinite}
+.breathe{animation:breathe 6s ease-in-out infinite}
+.sway{transform-box:fill-box;transform-origin:top center;animation:sway 7s ease-in-out infinite}
+.sway.b{animation-delay:-3s;animation-duration:9s}
+.ray{animation:ray 8s ease-in-out infinite}
+#aura{transform-box:fill-box;transform-origin:center;transition:transform 4s ease-in-out}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@keyframes floatHi{0%,100%{transform:translateY(-14px)}50%{transform:translateY(-30px)}}
+@keyframes breathe{50%{transform:translateY(-3px)}}
+@keyframes sway{50%{transform:rotate(4deg)}}
+@keyframes ray{50%{opacity:.35}}
+.rainbow #aura{animation:hue 1.2s linear infinite}
+@keyframes hue{to{filter:hue-rotate(360deg)}}
+.bubble{background:linear-gradient(var(--card),var(--card)) padding-box,linear-gradient(135deg,var(--gold2),var(--jade)) border-box;border:1px solid transparent;border-radius:24px;padding:20px 22px;box-shadow:0 0 40px rgba(159,227,236,.12)}
+.who{font-size:13px;color:var(--gold);font-weight:600}
+#say{font-size:19px;line-height:1.5;min-height:3em;margin:6px 0 4px}
+#cite{font-size:14px;color:var(--soft);margin:0 0 12px;min-height:1em}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:1px solid var(--line);background:rgba(232,180,162,.08);color:var(--ink);border-radius:999px;padding:9px 15px;min-height:44px;font:600 15px "Nunito Sans",sans-serif;cursor:pointer;text-align:left}
+.opt:hover,.opt[aria-pressed=true]{border-color:var(--gold2);background:rgba(232,180,162,.2)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;font-size:14px;color:var(--soft)}
+.legend b{color:var(--gold2);font-weight:700}
+/* portal */
+.portal{position:fixed;inset:0;z-index:50;display:grid;place-items:center;background:rgba(8,4,16,.78);backdrop-filter:blur(3px);padding:16px}
+.vortex{position:absolute;width:min(92vmin,680px);aspect-ratio:1;border-radius:50%;background:conic-gradient(from 0deg,var(--pc),transparent 18%,var(--gold2) 30%,transparent 45%,var(--pc) 60%,transparent 75%,var(--gold2) 88%,var(--pc));-webkit-mask:radial-gradient(circle,transparent 34%,#000 36%,#000 60%,transparent 71%);mask:radial-gradient(circle,transparent 34%,#000 36%,#000 60%,transparent 71%);animation:spin 5s linear infinite,open .6s ease-out;filter:blur(1px)}
+.vortex.two{width:min(70vmin,520px);animation-direction:reverse;animation-duration:8s;opacity:.7}
+@keyframes open{from{transform:scale(.1) rotate(0);opacity:0}}
+.pcard{position:relative;max-width:440px;width:100%;background:rgba(24,16,44,.95);border:1px solid var(--pc);border-radius:24px;padding:24px;box-shadow:0 0 60px var(--pc);animation:pop .5s ease-out;max-height:86vh;overflow:auto}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+.pcard .sk{font-size:14px;color:var(--soft)}
+.pclose{position:absolute;top:10px;right:10px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--ink);font-size:22px;cursor:pointer}
+/* lists */
+.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.door{background:linear-gradient(#2a1c48,#160f2a)!important;position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:18px 14px 16px;border-radius:120px 120px 18px 18px;border:1px solid var(--line);background:linear-gradient(#152a20,#0d1913);color:var(--ink);text-decoration:none;transition:transform .3s,box-shadow .3s,border-color .3s}
+.door:hover{transform:translateY(-4px);border-color:var(--gold2);box-shadow:0 0 30px rgba(255,226,216,.25)}
+.door svg{width:84px;height:84px}
+.door b{font-family:'Cormorant Garamond',serif;color:var(--gold2);font-size:17px}
+.door span{font-size:14px;color:var(--soft)}
+.freqs{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.freq{border:1px solid var(--line);border-radius:20px;padding:16px;background:var(--card);cursor:pointer;text-align:left;color:var(--ink);font:inherit}
+.freq:hover{border-color:var(--gold2)}
+.freq .dot{width:30px;height:30px;border-radius:50%;margin-bottom:8px;box-shadow:0 0 18px currentColor}
+.tag{display:inline-block;font-size:12px;font-weight:700;padding:2px 10px;border-radius:999px;color:#14100a;margin:0 4px 4px 0;white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.card .meta{font-size:14px;color:var(--soft)}
+.card .row{display:flex;gap:8px;margin-top:auto;padding-top:8px;align-items:center}
+.card .row a{font-weight:700;font-size:15px}
+.heart{margin-left:auto;border:0;background:none;cursor:pointer;width:44px;height:44px;border-radius:50%;color:var(--soft)}
+.heart[aria-pressed=true]{color:var(--connect)}.heart svg{width:24px;height:24px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;min-height:44px;font-size:14px;font-weight:600;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--gold);color:#2a1424;border-color:var(--gold)}
+input,select,textarea{font:16px "Nunito Sans",sans-serif;padding:10px 14px;border-radius:16px;border:1px solid var(--line);background:var(--card);color:var(--ink);min-height:44px}
+input[type=search]{flex:1 1 220px;border-radius:999px}
+input[type=range]{accent-color:var(--gold);padding:0;border:0;background:none}
+textarea{width:100%;min-height:110px;resize:vertical}
+.tiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.tier{border:1px dashed var(--line);border-radius:18px;padding:16px}
+.tier b{font-family:'Cormorant Garamond',serif;color:var(--gold2);font-size:17px;display:block}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,48px);align-items:start}
+.room-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.back{font-size:14px;text-decoration:none}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px}
+.lbl{font:600 13px 'Cormorant Garamond',serif;color:var(--gold);margin:16px 0 8px}
+/* sound */
+.bowlbox{position:relative;display:grid;place-items:center;min-height:320px}
+#bowlCv{position:absolute;inset:0;width:100%;height:100%}
+#bowl{position:relative;width:min(300px,80%);cursor:pointer;transition:transform .15s}
+#bowl:active{transform:scale(.97)}
+/* breath */
+.orbwrap{display:grid;place-items:center;min-height:340px;position:relative}
+.orb{width:120px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,var(--gold2) 30%,var(--lav) 75%,transparent 76%);box-shadow:0 0 60px rgba(255,226,216,.45);transition-property:transform;transition-timing-function:ease-in-out}
+.orbtxt{position:absolute;text-align:center;font:600 24px 'Cormorant Garamond',serif;color:var(--gold2);bottom:8px;left:0;right:0}
+/* sand css */
+#sand{width:100%;aspect-ratio:16/10;border-radius:18px;border:6px solid #3a2a18;touch-action:none;cursor:crosshair;display:block;background:#e9dfc8}
+/* meditate */
+.timer{position:relative;width:min(320px,90%);aspect-ratio:1;margin:0 auto}
+.timer svg{width:100%;height:100%}
+.timer .t{position:absolute;inset:0;display:grid;place-items:center;font:700 42px 'Cormorant Garamond',serif;color:var(--gold2)}
+.flame{transform-origin:50% 90%;transform-box:fill-box;animation:flick .18s ease-in-out infinite alternate}
+@keyframes flick{to{transform:scale(1.04,.96) skewX(2deg)}}
+/* chakras */
+.shrine{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px;align-items:center}
+.shrine svg{width:100%;max-width:360px;margin:auto;display:block}
+.cnode{cursor:pointer}.cnode circle{transition:r .3s,opacity .3s}
+.cnode.on .halo{opacity:.9}
+/* lanterns */
+.sky{position:relative;height:420px;border-radius:22px;overflow:hidden;background:radial-gradient(ellipse at 50% 120%,#3a2160,#0c0718 70%);border:1px solid var(--line)}
+.lan{position:absolute;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#fff,#ffd1ec 35%,#c9a7ff 70%,rgba(159,227,236,.2));box-shadow:0 0 26px #ffb8e6,0 0 60px rgba(201,167,255,.6);animation:drift 6s ease-in-out infinite}
+.lan.rise{animation:rise 5s ease-out forwards}
+@keyframes drift{50%{transform:translateY(-10px) rotate(2deg)}}
+@keyframes rise{from{top:100%}}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7}
+/* koan */
+.flip{perspective:900px;max-width:520px}
+.fcard{position:relative;min-height:220px;transform-style:preserve-3d;transition:transform .8s}
+.fcard.turned{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;border:1px solid var(--gold);display:grid;place-items:center;text-align:center;padding:24px;background:radial-gradient(circle at 50% 0%,#5a3a8a,#1c1434 70%)}
+.face.back{background:radial-gradient(circle,#3a2160,#140c26);font-size:40px}
+.face.front{transform:rotateY(180deg)}
+.face p{font:600 clamp(22px,3.2vw,29px)/1.35 'Cormorant Garamond',serif;color:var(--gold2);margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;text-align:center}
+.stat b{display:block;font:700 32px 'Cormorant Garamond',serif;color:var(--gold2)}
+.ritual{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);cursor:pointer;font-weight:600;min-height:44px}
+.ritual input{width:22px;height:22px;min-height:0;accent-color:var(--jade)}
+.result{border-left:4px solid var(--tune);padding-left:16px}
+.empty{color:var(--soft);padding:20px;border:1px dashed var(--line);border-radius:18px}
+.small{font-size:14px;color:var(--soft)}
+.entry{border-bottom:1px solid var(--line);padding:10px 0}
+footer{border-top:1px solid var(--line)}
+.walkbox{position:relative;height:min(80vh,780px);overflow:hidden;background:#060d09;border-bottom:1px solid var(--line)}
+.walkbox canvas{width:100%;height:100%}
+.hud{position:absolute;left:12px;top:12px;max-width:320px;background:rgba(17,11,32,.82);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:14px;color:var(--soft);pointer-events:none}
+.hud b{color:var(--gold2)}
+.wprompt{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:rgba(17,11,32,.92);border:1px solid var(--gold);border-radius:999px;padding:6px 6px 6px 18px;white-space:nowrap;box-shadow:0 0 30px rgba(255,226,216,.3)}
+.wprompt b{color:var(--gold2);font-family:'Cormorant Garamond',serif}
+.wsub{position:absolute;top:12px;right:12px;left:auto;max-width:min(420px,60%);background:rgba(9,18,14,.9);border:1px solid var(--gold);border-radius:16px;padding:12px 16px;font-size:16px}
+.joy{position:absolute;left:22px;bottom:22px;width:120px;height:120px;border-radius:50%;border:2px solid rgba(255,226,216,.6);background:radial-gradient(circle,rgba(255,226,216,.12),rgba(9,18,14,.55));touch-action:none;display:grid;place-items:center;z-index:2}
+.knob{width:52px;height:52px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#ffb8df 50%,#c9a7ff);box-shadow:0 0 18px rgba(255,226,216,.6);pointer-events:none;transition:transform .05s}
+@media(hover:hover) and (pointer:fine){.joy{opacity:.55}}
+@media(max-width:600px){.hud{font-size:12px;max-width:62%;padding:8px 10px}.hud .long{display:none}.wprompt{bottom:160px}.walkbox{height:calc(100svh - 104px)}}
+.wload{position:absolute;inset:0;display:grid;place-items:center;font:600 20px 'Cormorant Garamond',serif;color:var(--gold2)}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px 16px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--soft)}
+.wheel svg,.bg svg{width:100%;height:auto;display:block}
+.bg svg{max-width:340px;margin:auto}
+table.pl{width:100%;border-collapse:collapse;font-size:15px}
+table.pl td,table.pl th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+table.pl th{font:600 13px 'Cormorant Garamond',serif;color:var(--gold)}
+.gl{font-size:20px;color:var(--gold2);font-family:"Segoe UI Symbol","Noto Sans Symbols 2","DejaVu Sans",sans-serif}
+.bar{height:10px;border-radius:5px;background:var(--gold)}
+.hdgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.hdgrid .stat{text-align:left}.hdgrid .stat b{font-size:18px;line-height:1.3}
+.acts{display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:14px}
+.acts div span{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:4px 0}
+.wingL,.wingR{transform-box:fill-box;animation:flutter 1.1s ease-in-out infinite alternate}
+.wingL{transform-origin:right center}.wingR{transform-origin:left center}
+@keyframes flutter{to{transform:scaleX(.82) skewY(2deg)}}
+.flap .wingL,.flap .wingR{animation-duration:.18s}
+#gongG{transform-box:fill-box;transform-origin:50% 0}
+.shake{animation:shake .9s ease-out}
+@keyframes shake{20%{transform:rotate(1.6deg)}40%{transform:rotate(-1.2deg)}60%{transform:rotate(.7deg)}80%{transform:rotate(-.3deg)}}
+.forks{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.fork{background:none;border:1px solid var(--line);border-radius:18px;padding:10px 8px 8px;color:var(--ink);cursor:pointer;width:96px;display:flex;flex-direction:column;align-items:center;gap:4px;font:600 13px "Nunito Sans",sans-serif}
+.fork:hover,.fork.on{border-color:var(--gold2);box-shadow:0 0 22px rgba(255,226,216,.3)}
+.fork svg{width:44px;height:120px;overflow:visible}
+.fork.ring .tines{animation:tine .06s linear infinite alternate}
+@keyframes tine{to{transform:scaleX(1.06)}}
+.tines{transform-box:fill-box;transform-origin:50% 100%}
+.fork b{font:700 17px 'Cormorant Garamond',serif;color:var(--gold2)}
+.gongbig{position:relative;max-width:440px;margin:auto;aspect-ratio:1}
+.gongbig svg{width:100%;height:100%;cursor:pointer}
+.session{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;display:flex;flex-direction:column;gap:6px}
+.session h3{font-size:24px}
+.session ul{margin:4px 0 8px;padding-left:18px;color:var(--soft);font-size:15px}
+.cred{columns:2 240px;font-size:15px;color:var(--soft);padding-left:18px}
+.anum{display:flex;flex-wrap:wrap;gap:8px}
+[hidden]{display:none!important}
+@media(max-width:860px){.temple .wrap,.two,.shrine{grid-template-columns:minmax(0,1fr)}.stage{max-width:460px}}
+@media(max-width:600px){nav{order:3;width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav a{padding:8px 10px;font-size:13px;flex:none;min-height:40px}header .wrap{row-gap:2px;padding-bottom:4px}#say{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.spin,.float,.deep .float,.breathe,.sway,.ray,.vortex,.lan,.flame,.rainbow #aura{animation:none}#aura,.fcard{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="brand" href="#home"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M15 15 C8 4 2 8 4 14 C6 19 12 17 15 15 C18 17 24 19 26 14 C28 8 22 4 15 15Z" fill="#c9a7ff" opacity=".85"/><path d="M15 15 C10 20 7 26 11 27 C14 27 15 20 15 15 C15 20 16 27 19 27 C23 26 20 20 15 15Z" fill="#9fe3ec" opacity=".8"/><circle cx="15" cy="15" r="2.4" fill="#ffe2d8"/></svg>The Frequency Fairy</a>
+ <nav><a href="#home">Fairy</a><a href="#glade">Glade</a><a href="#sanctuary">Sanctuary</a><a href="#cosmos">Cosmos</a><a href="#sessions">Sessions</a><a href="#my-magic">My Magic</a></nav>
+ <button class="snd" id="sndBtn" aria-label="Sound on" aria-pressed="true"></button>
+</div></header>
+
+<main>
+<!-- TEMPLE -->
+<section id="v-home">
+ <div class="band temple"><div class="wrap">
+  <div class="stage" id="stage">
+   <svg id="scene" viewBox="0 0 600 640" role="img" aria-label="The Frequency Fairy floating before a sacred gong among flowering vines, holding a tuning-fork wand"></svg>
+   <canvas id="fx" aria-hidden="true"></canvas>
+   <div class="tip" id="tip"></div>
+  </div>
+  <div>
+   <h1>The Frequency Fairy</h1>
+   <div class="bubble" aria-live="polite">
+    <div class="who" style="display:flex;align-items:center;gap:10px;justify-content:space-between">The Fairy whispers <button class="chip" id="voiceBtn" aria-pressed="true" style="min-height:36px;padding:4px 12px;font-size:13px">Voice on</button></div>
+    <p id="say">…</p><p id="cite"></p>
+    <div class="opts" id="opts"></div>
+   </div>
+   <div class="legend">
+    <span>Touch her: <b>a fairy blessing</b></span><span>Wand: <b>tuning fork</b></span><span>Gong: <b>strike it</b></span><span>Open hand: <b>angel message</b></span><span>Wings: <b>the glade</b></span><span>Crown to root: <b>chakra portals</b></span>
+   </div>
+   <p style="margin-top:12px"><button class="btn alt" id="visionBtn" aria-pressed="false">Chakra sight</button> <a class="btn" href="#glade" style="text-decoration:none;display:inline-flex;align-items:center">Walk the fairy glade</a> <a class="btn alt" href="#sanctuary" style="text-decoration:none;display:inline-flex;align-items:center">Sanctuary rooms</a></p>
+  </div>
+ </div></div>
+
+ <div class="band"><div class="wrap">
+  <h2>The Sanctuary</h2>
+  <p>Nine rooms of sound and light. Headphones make the magic deeper.</p>
+  <div class="rooms" id="roomsHome"></div>
+ </div></div>
+
+ <div class="band" style="padding-top:0"><div class="wrap">
+  <h2>Find your frequency</h2>
+  <p>Five healing frequencies. Pick the one that calls you, or let the Fairy read yours.</p>
+  <div class="freqs" id="freqs"></div>
+ </div></div>
+
+ <div class="band" style="background:var(--bg2)"><div class="wrap two" style="align-items:center">
+  <div>
+   <h2>Sessions with Victoria</h2>
+   <p>The Frequency Fairy is inspired by the work of Victoria, a sound healer and licensed massage therapist with more than ten years of practice. She plays the sacred gong, leads sound baths, and works with tuning forks, Biofield Tuning and Reiki.</p>
+   <p><a class="btn" href="#sessions" style="text-decoration:none;display:inline-flex;align-items:center">See her sessions</a> <a class="btn alt" href="https://www.healingbyvictoria.com/" target="_blank" rel="noopener" style="text-decoration:none;display:inline-flex;align-items:center">healingbyvictoria.com</a></p>
+  </div>
+  <div class="grid" id="picks" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))"></div>
+ </div></div>
+</section>
+
+<!-- DEN -->
+<section id="v-sanctuary" class="band" hidden><div class="wrap">
+ <h2>The Sanctuary</h2>
+ <p>Nine rooms inside the Fairy's sanctuary. Sound works best with headphones.</p>
+ <div class="rooms" id="roomsDen"></div>
+</div></section>
+
+<!-- SOUND -->
+<section id="v-sound" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Crystal Bowl Chamber</h2>
+ <div class="two">
+  <div class="panel bowlbox"><canvas id="bowlCv"></canvas>
+   <svg id="bowl" viewBox="0 0 300 200" role="button" tabindex="0" aria-label="Strike the singing bowl">
+    <defs><linearGradient id="bz" x1="0" x2="1"><stop offset="0" stop-color="#b9a8d8"/><stop offset=".35" stop-color="#f4eefc"/><stop offset=".55" stop-color="#ffffff"/><stop offset="1" stop-color="#a493c8"/></linearGradient></defs>
+    <ellipse cx="150" cy="186" rx="110" ry="10" fill="#000" opacity=".4"/>
+    <path d="M30 70 Q40 180 150 182 Q260 180 270 70Z" fill="url(#bz)"/>
+    <ellipse cx="150" cy="70" rx="120" ry="24" fill="#d9cdef" stroke="#ffffff" stroke-width="4"/>
+    <ellipse cx="150" cy="74" rx="104" ry="17" fill="#8c79b8"/>
+    <path d="M60 110 Q150 130 240 110" stroke="#ffffff" stroke-width="2" fill="none" opacity=".6"/>
+   </svg>
+  </div>
+  <div>
+   <p>Tap the crystal bowl. Each note is tuned to a chakra frequency.</p>
+   <div class="lbl">Bowl note</div><div class="filters" id="notes"></div>
+   <div class="lbl">Om chants</div><div class="filters" id="oms"></div>
+   <div class="lbl">Binaural beats (headphones)</div><div class="filters" id="beats"></div>
+   <div class="lbl">Ambience</div><div class="filters" id="amb"></div>
+   <div class="lbl">Volume</div><input type="range" id="vol" min="0" max="1" step="0.01" value="0.7" aria-label="Volume" style="width:100%">
+   <p style="margin-top:14px"><button class="btn alt" id="stopAll">Stop all sound</button></p>
+  </div>
+ </div>
+</div></section>
+
+<!-- BREATH -->
+<section id="v-breath" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Breath Garden</h2>
+ <div class="two">
+  <div class="panel orbwrap"><div class="orb" id="orb2"></div><div class="orbtxt" id="orbTxt">Choose a breath</div></div>
+  <div>
+   <div class="lbl">Pattern</div><div class="filters" id="patterns"></div>
+   <p id="patDesc"></p>
+   <div class="lbl">Rounds</div>
+   <select id="rounds" aria-label="Rounds"><option>4</option><option selected>6</option><option>10</option></select>
+   <label style="margin-left:12px"><input type="checkbox" id="breathTone" checked style="min-height:0;width:20px;height:20px;vertical-align:middle"> Guide tone</label>
+   <p style="margin-top:14px"><button class="btn" id="breathGo">Begin</button></p>
+  </div>
+ </div>
+</div></section>
+
+<!-- GONG -->
+<section id="v-gong" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Gong Bath</h2>
+ <div class="two">
+  <div class="gongbig"><svg id="gongBig" viewBox="0 0 400 400" role="button" tabindex="0" aria-label="Strike the gong. The center sounds deep, the edge shimmers."></svg></div>
+  <div>
+   <p>Strike near the center for a deep, rolling sound, or near the edge for shimmer. Each gong is tuned to a cosmic cycle.</p>
+   <div class="lbl">Planetary gong</div><div class="filters" id="planets"></div>
+   <p id="planetTxt" class="small"></p>
+   <div class="lbl">Gong wash</div><div class="filters" id="washMins"></div>
+   <p><button class="btn" id="washGo">Begin gong wash</button></p>
+   <p class="small">Lie down, close your eyes and let the waves move through you. Keep the volume soft at first.</p>
+  </div>
+ </div>
+</div></section>
+
+<!-- FORKS -->
+<section id="v-forks" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Tuning Fork Studio</h2>
+ <p>Tap a fork to strike it. Tuning forks are one of Victoria's main healing tools.</p>
+ <div class="filters" id="forkSets"></div>
+ <p id="forkSetTxt" class="small"></p>
+ <div class="forks" id="forkRow"></div>
+ <div class="two" style="margin-top:24px;align-items:center">
+  <svg id="bodyMap" viewBox="0 0 300 440" style="max-width:300px;margin:auto;display:block" aria-label="Where the fork is placed"></svg>
+  <div class="panel">
+   <h3 id="forkName">Choose a fork</h3>
+   <p id="forkInfo">Each fork shows where a practitioner might place it.</p>
+   <p><button class="btn alt" id="sweep">Biofield sweep</button></p>
+   <p class="small">The sweep moves a soft fork tone slowly around the body from left to right. Headphones recommended. Sound tools support relaxation and are not a medical treatment.</p>
+  </div>
+ </div>
+</div></section>
+
+<!-- MEDITATE -->
+<section id="v-meditate" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Moon Meditation</h2>
+ <div class="two">
+  <div class="timer">
+   <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="90" fill="none" stroke="rgba(232,180,162,.2)" stroke-width="6"/><circle id="ring" cx="100" cy="100" r="90" fill="none" stroke="#f6dc8f" stroke-width="6" stroke-linecap="round" stroke-dasharray="565.5" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+    <g transform="translate(100 128)"><rect x="-9" y="0" width="18" height="34" rx="3" fill="#efe3c8"/><path class="flame" d="M0 -26 C8 -14 8 -4 0 0 C-8 -4 -8 -14 0 -26Z" fill="#f6b13b"/><path class="flame" d="M0 -16 C4 -9 4 -3 0 -1 C-4 -3 -4 -9 0 -16Z" fill="#fff3c4"/></g></svg>
+   <div class="t" id="tLeft">5:00</div>
+  </div>
+  <div>
+   <div class="lbl">Minutes</div><div class="filters" id="mins"></div>
+   <div class="lbl">Ambience</div><div class="filters" id="mAmb"></div>
+   <p style="margin-top:14px"><button class="btn" id="medGo">Begin</button></p>
+   <p class="small">A gong opens and closes your sit. Minutes are added to My Zen.</p>
+  </div>
+ </div>
+</div></section>
+
+<!-- CHAKRAS -->
+<section id="v-chakras" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Chakra Shrine</h2>
+ <div class="shrine">
+  <svg id="shrineSvg" viewBox="0 0 300 440" aria-label="Seven chakras on a meditating figure"></svg>
+  <div class="panel" id="ckPanel"></div>
+ </div>
+ <p class="small" style="margin-top:14px">Chakra frequencies come from contemplative tradition. Use them to relax, not as medical treatment.</p>
+</div></section>
+
+<!-- WISHES -->
+<section id="v-wishes" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Wish Garden</h2>
+ <div class="sky" id="sky"></div>
+ <form id="lanForm" class="filters" style="margin-top:14px">
+  <input id="lanTxt" maxlength="80" placeholder="Make a wish or set an intention…" aria-label="Intention" style="flex:1 1 260px;border-radius:999px">
+  <button class="btn">Release your wish</button>
+ </form>
+</div></section>
+
+<!-- ANGELS -->
+<section id="v-angels" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Angel Messages</h2>
+ <div class="two">
+  <div>
+   <div class="flip"><div class="fcard" id="fcard"><div class="face back"><p>✧ Draw an angel card ✧</p></div><div class="face front"><p id="koanTxt"></p></div></div></div>
+   <p style="margin-top:14px"><button class="btn" id="drawKoan">Draw an angel card</button></p>
+   <p class="small">Take a breath, hold a question in your heart, then draw.</p>
+   <div class="lbl">Angel numbers</div><div class="anum" id="anums"></div><p id="anumTxt" style="margin-top:10px"></p>
+  </div>
+  <div>
+   <div class="lbl">Your reflection</div>
+   <textarea id="refl" placeholder="What does this message stir in you?"></textarea>
+   <p style="margin-top:10px"><button class="btn alt" id="saveRefl">Save to journal</button></p>
+   <div id="journal"></div>
+  </div>
+ </div>
+</div></section>
+
+<!-- WALK -->
+<section id="v-glade" hidden>
+ <div class="walkbox" id="walkBox">
+  <div class="wload" id="walkLoad">The glade is waking up…</div>
+  <div class="hud"><b>Walk the fairy glade.</b> Tap the floor to walk there, or use the joystick. Drag to look around.<span class="long"> On a keyboard: W A S D or arrows, Shift to run, E to enter.</span> Walk up to a glowing flower ring or to the Fairy.</div>
+  <div class="wprompt" data-prompt hidden><span>Enter <b></b></span><button class="btn" id="enterBtn">Enter (E)</button></div>
+  <div class="wsub" id="wsub" hidden></div>
+ </div>
+</section>
+
+<!-- COSMOS -->
+<section id="v-cosmos" class="band" hidden><div class="wrap">
+ <div class="room-head"><a class="back" href="#sanctuary">← Sanctuary</a></div>
+ <h2>Cosmos Chamber</h2>
+ <p>Your astrology chart and Human Design bodygraph, calculated from where the planets were when you were born.</p>
+ <form id="birthForm" class="panel">
+  <div class="form">
+   <label>Name (optional)<input id="bName" autocomplete="off"></label>
+   <label>Birth date<input id="bDate" type="date" required></label>
+   <label>Birth time<input id="bTime" type="time" value="12:00"></label>
+   <label style="flex-direction:row;align-items:center;gap:8px;margin-top:22px"><input type="checkbox" id="bNoTime" style="width:20px;height:20px;min-height:0"> I don't know my birth time</label>
+  </div>
+  <div class="lbl">Birth place</div>
+  <div class="filters" style="margin-bottom:6px"><input id="bPlace" placeholder="City, e.g. Austin" list="cityList" style="flex:1 1 240px;border-radius:999px" autocomplete="off"><button type="button" class="btn alt" id="findPlace">Find place</button></div>
+  <datalist id="cityList"></datalist>
+  <div id="placeRes" class="filters"></div>
+  <div class="form">
+   <label>Latitude<input id="bLat" inputmode="decimal" value="30.2672"></label>
+   <label>Longitude<input id="bLon" inputmode="decimal" value="-97.7431"></label>
+   <label>Time zone<input id="bTz" list="tzList" value="America/Chicago"></label>
+  </div>
+  <datalist id="tzList"></datalist>
+  <p style="margin-top:16px"><button class="btn">Read my stars</button> <span class="small" id="cosmosMsg"></span></p>
+ </form>
+ <div id="cosmosOut" hidden style="margin-top:24px">
+  <div class="bubble"><div class="who">The Fairy reads your chart</div><p id="reading" style="font-size:18px;margin:8px 0 0"></p></div>
+  <div class="filters" style="margin-top:20px"><button class="chip" data-ctab="astro" aria-pressed="true">Astrology</button><button class="chip" data-ctab="hd" aria-pressed="false">Human Design</button></div>
+  <div id="astroOut" class="two"><div class="wheel panel" id="wheel"></div><div><table class="pl" id="plTable"></table><div class="lbl">Element balance</div><div id="elems"></div></div></div>
+  <div id="hdOut" hidden><div class="two"><div class="bg panel" id="bodygraph"></div><div><div class="hdgrid" id="hdSum"></div><div class="lbl">Activations</div><div class="acts" id="hdActs"></div></div></div></div>
+  <p class="small" style="margin-top:16px">Planet positions come from astronomy-engine. Houses use the whole-sign system. Human Design uses the mean lunar node, so node gates can differ slightly from apps that use the true node. Charts are for self-reflection.</p>
+ </div>
+</div></section>
+
+<!-- SESSIONS -->
+<section id="v-sessions" class="band" hidden><div class="wrap">
+ <h2>Sessions with Victoria</h2>
+ <p>The Frequency Fairy's real-world counterpart. Victoria blends Western and Eastern bodywork with energy medicine and sound. Details, availability and booking are on her website.</p>
+ <div class="grid" id="list"></div>
+ <div class="two" style="margin-top:32px">
+  <div class="panel"><h3>About Victoria</h3>
+   <p>A licensed massage therapist with more than ten years of experience, Victoria trained in Kundalini Yoga with a specialization in gong and sound. She plays the sacred gong, leads sound baths, and now focuses on Tuning Fork Therapy to bring the nervous system and the biofield back into harmony.</p>
+   <p><a href="https://www.healingbyvictoria.com/" target="_blank" rel="noopener">healingbyvictoria.com</a> · <a href="https://instagram.com/healing_by_victoria" target="_blank" rel="noopener">@healing_by_victoria</a></p></div>
+  <div class="panel"><h3>Training</h3><ul class="cred">
+   <li>NY State Licensed Massage Therapist, Swedish Institute NYC</li><li>Acutonics Sound Medicine</li><li>Biofield Tuning certification</li><li>Reiki Master</li><li>Kundalini Yoga Teacher, gong and sound</li><li>Registered Yoga Teacher (200 hr)</li><li>Flower of Life, Level 1</li><li>Signature Cell Healing</li><li>Peptide Therapy Integration Specialist</li></ul></div>
+ </div>
+</div></section>
+
+<!-- MY ZEN -->
+<section id="v-my-magic" class="band" hidden><div class="wrap">
+ <h2>My Magic</h2>
+ <div class="stats" id="stats"></div>
+ <div class="two" style="margin-top:24px">
+  <div><div id="myFreq"></div>
+   <h3 style="margin-top:20px">Today's rituals</h3><p class="small">Tick three or more to keep your streak glowing.</p><div id="rituals"></div></div>
+  <div><h3>Journal</h3><div id="myJournal"></div></div>
+ </div>
+ <h3 style="margin:32px 0 12px">Saved sessions</h3>
+ <div class="grid" id="saved"></div>
+ <p class="small" style="margin-top:18px">Everything here stays in this browser. No account needed.</p>
+</div></section>
+</main>
+
+<div class="portal" id="portal" hidden role="dialog" aria-modal="true" aria-labelledby="pTitle">
+ <div class="vortex"></div><div class="vortex two"></div>
+ <div class="pcard"><button class="pclose" id="pClose" aria-label="Close portal">×</button><div class="sk" id="pSk"></div><h2 id="pTitle"></h2><div id="pBody"></div><div class="opts" id="pOpts"></div></div>
+</div>
+
+<footer class="band"><div class="wrap small">
+ <p><b style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold2)">The Frequency Fairy</b> · inspired by <a href="https://www.healingbyvictoria.com/" target="_blank" rel="noopener">Healing by Victoria</a></p>
+ <p>Sound, light and angel messages for relaxation and reflection. Not medical advice or treatment.</p>
+</div></footer>
+
+<script>
+{
+/* ================= data ================= */
+const F={
+ moon:{name:"Moonwater",word:"Soothe",line:"Your nervous system is asking for softness. Crystal tones, slow breath, moonlight.",ritual:"Run a warm bath or shower by candlelight. Hum one long note on every exhale for three minutes.",room:"sound"},
+ gong:{name:"Gong Wave",word:"Release",line:"Something in you is ready to let go. Let the gong wash it out.",ritual:"Lie on the floor, palms up. Play a gong wash and let each wave carry one worry away.",room:"gong"},
+ rose:{name:"Rose Light",word:"Love",line:"Your heart wants tenderness. Rose light, kind words, an angel at your shoulder.",ritual:"Place both hands on your heart and say three things you love about yourself, out loud.",room:"angels"},
+ earth:{name:"Earth Hum",word:"Ground",line:"You are floating far from your body. Come home with the deep Ohm fork.",ritual:"Stand barefoot on grass or the floor. Feel your feet for one minute while you breathe low and slow.",room:"forks"},
+ star:{name:"Star Seed",word:"Expand",line:"Your spirit wants sky. Crown tones, wishes and wide open space.",ritual:"Step outside tonight, find one star, and whisper a wish to it.",room:"wishes"}
+};
+const S=[
+ ["Soul Star Healing","Victoria's signature energy healing work.",[],["star","rose"]],
+ ["Massage & Energy Healing","Licensed bodywork blended with energy medicine.",["Deep Tissue","CranioSacral Therapy","Myofascial Release","Trigger Point Therapy","Chakra Balancing","Biofield Tuning","Reiki","Tuning Fork Therapy"],["earth","moon"]],
+ ["Sound Baths & Sacred Gong","Lie back while gong and sound wash through you.",[],["gong","moon"]],
+ ["Tuning Fork Therapy","Tuning forks on and around the body to calm the nervous system and the biofield. Victoria's current focus.",[],["earth","star"]],
+ ["Reiki","Gentle hands-on energy healing from a Reiki Master.",[],["rose","moon"]],
+ ["Upcoming Events","Group sound baths and gatherings.",[],["gong","rose"]],
+ ["Products to Shop","Tools and products Victoria recommends.",[],["star"]]
+].map(([n,d,mods,f])=>({id:n.toLowerCase().replace(/[^a-z0-9]+/g,"-"),n,d,mods,f}));
+const Q=[
+ {q:"Close your eyes for one breath, darling. How does your body feel?",a:[["Tense and wired",{moon:2}],["Heavy, holding something",{gong:2}],["Tender, a little lonely",{rose:2}],["Spacey, ungrounded",{earth:2}],["Restless for more",{star:2}]]},
+ {q:"Which sound would you fall into right now?",a:[["Crystal bowls",{moon:1}],["A rolling gong",{gong:1}],["A loving voice",{rose:1}],["A deep hum",{earth:1}],["Wind chimes at night",{star:1}]]},
+ {q:"Where would you love to be?",a:[["By moonlit water",{moon:1,star:1}],["In a dark, warm cave",{gong:1,earth:1}],["In a rose garden",{rose:1}],["Under an open sky",{star:1}]]},
+ {q:"And what would you like to leave with?",a:[["Peace",{moon:1}],["Lightness",{gong:1}],["Love",{rose:1}],["Strength",{earth:1}],["Wonder",{star:1}]]}
+];
+const QUOTES=[
+ ["You are allowed to be soft and strong in the same breath.","The Fairy"],
+ ["Every cell in you is listening. Speak to it kindly.","The Fairy"],
+ ["Healing is not a race. Even the moon takes her time to be full.","The Fairy"],
+ ["When you don't know what to do, hum. Your body remembers the way home.","The Fairy"],
+ ["You were never too much. You were just a new frequency.","The Fairy"],
+ ["Let the sound go where your words can't reach.","The Fairy"],
+ ["Flowers don't force themselves open. Neither should you.","The Fairy"],
+ ["There is a song in you that only you can sing. The world is waiting to hear it.","The Fairy"],
+ ["Rest is a sacred act, not a reward.","The Fairy"],
+ ["Every exhale is a little goodbye to what you no longer need.","The Fairy"],
+ ["Sprinkle a little kindness on yourself first. Then share the rest.","The Fairy"],
+ ["The gong doesn't fix you. It reminds you that you were never broken.","The Fairy"],
+ ["Your intuition whispers. Make it quiet enough to hear.","The Fairy"],
+ ["Drink water with an intention. You are mostly water, after all.","The Fairy"],
+ ["Magic is just love paying close attention.","The Fairy"],
+ ["The stars burn without asking permission. So can you.","The Fairy"],
+ ["Wherever you feel tight, send a little light. Wherever you feel light, say thank you.","The Fairy"],
+ ["You are a tuning fork for everyone around you. Choose a kind note.","The Fairy"]
+];
+const KOANS=[
+ "The Angel of Rest says: you have been carrying so much. Put one thing down today, and let it stay down.",
+ "The Angel of New Beginnings says: a door is opening. You don't need to see the whole path, only the next step.",
+ "The Angel of Self-Love says: speak to yourself the way you speak to someone you adore.",
+ "The Angel of Abundance says: there is enough. Open your hands to receive.",
+ "The Angel of Courage says: the fear is real, and so is your strength. Walk forward holding both.",
+ "The Angel of Release says: what is leaving is making room for what is meant for you.",
+ "The Angel of Joy says: play is medicine. Do something today just because it delights you.",
+ "The Angel of Voice says: your truth wants to be spoken. Say it gently, but say it.",
+ "The Angel of Trust says: you are being guided, even in the waiting.",
+ "The Angel of the Body says: your body is not a problem to solve. It is a friend to listen to.",
+ "The Angel of Forgiveness says: free yourself first. Forgiveness is a gift you give your own heart.",
+ "The Angel of Connection says: reach out to someone today. Love is waiting on the other end.",
+ "The Angel of Clarity says: the answer you are looking for is quieter than your worry. Get still.",
+ "The Angel of Healing says: you are already healing. Notice how far you have come.",
+ "The Angel of Dreams says: write down the dream you keep having for your life. The universe is listening.",
+ "The Angel of Nature says: go outside. The trees have a message they can only give in person.",
+ "The Angel of Boundaries says: no is a complete sentence, and a loving one.",
+ "The Angel of Gratitude says: name three small blessings before you sleep tonight."
+];
+const ANUM={111:"New beginnings. Your thoughts are planting seeds, so plant them with love.",222:"Balance and trust. Things are coming together, even if you can't see it yet.",333:"Your guides are near. You are supported and encouraged.",444:"Protection. You are safe, held, and on the right path.",555:"Change is coming. Let the old fall away gracefully.",666:"Come back to your heart. Balance the material with the spiritual.",777:"Spiritual alignment. Keep following your intuition.",888:"Abundance flows. Receive it without guilt.",999:"A cycle is completing. Honor the ending, a new chapter waits."};
+const CK=[
+ {k:"root",n:"Root",s:"Muladhara",c:"#e5483f",hz:396,loc:"Base of the spine",el:"Earth",th:"Safety, grounding, belonging",af:"I am safe. I am grounded. I belong here.",y:470},
+ {k:"sacral",n:"Sacral",s:"Svadhisthana",c:"#f38a2a",hz:417,loc:"Lower belly",el:"Water",th:"Creativity, pleasure, flow",af:"I flow with life and let joy move through me.",y:428},
+ {k:"solar",n:"Solar Plexus",s:"Manipura",c:"#f5cf2e",hz:528,loc:"Upper belly",el:"Fire",th:"Will, confidence, inner fire",af:"I stand in my power with a warm heart.",y:388},
+ {k:"heart",n:"Heart",s:"Anahata",c:"#46b35d",hz:639,loc:"Center of the chest",el:"Air",th:"Love, compassion, forgiveness",af:"I give and receive love freely.",y:338},
+ {k:"throat",n:"Throat",s:"Vishuddha",c:"#3a8fe0",hz:741,loc:"Throat",el:"Sound",th:"Truth, expression, listening",af:"I speak my truth with kindness.",y:282},
+ {k:"third",n:"Third Eye",s:"Ajna",c:"#6a4fd0",hz:852,loc:"Between the brows",el:"Light",th:"Intuition, insight, imagination",af:"I trust the wisdom I see within.",y:204},
+ {k:"crown",n:"Crown",s:"Sahasrara",c:"#b45ad6",hz:963,loc:"Top of the head",el:"Cosmos",th:"Connection, stillness, awareness",af:"I am connected to all that is.",y:150}
+];
+const ROOMS=[
+ ["gong","Gong Bath","Strike the sacred gong, or drift in a gong wash."],
+ ["forks","Tuning Fork Studio","Ohm, Solfeggio, chakra and planetary forks."],
+ ["sound","Crystal Bowl Chamber","Crystal bowls, Om chants and binaural beats."],
+ ["angels","Angel Messages","Draw an angel card and read the angel numbers."],
+ ["chakras","Chakra Shrine","Seven energy centers, their tones and affirmations."],
+ ["breath","Breath Garden","Guided breathing to soothe or awaken."],
+ ["meditate","Moon Meditation","Candle, gong and a timer that holds you."],
+ ["wishes","Wish Garden","Make a wish and release it as a glowing light."],
+ ["cosmos","Cosmos Chamber","Your astrology chart and Human Design."]
+];
+const ICON={
+ sound:`<ellipse cx="42" cy="60" rx="28" ry="6" fill="none"/><path d="M14 46 Q18 66 42 66 Q66 66 70 46Z"/><ellipse cx="42" cy="46" rx="28" ry="6"/><path d="M22 30 Q42 20 62 30 M28 22 Q42 14 56 22" opacity=".7"/>`,
+ gong:`<path d="M14 14 h56 M20 14 v8 M64 14 v8"/><circle cx="42" cy="48" r="26"/><circle cx="42" cy="48" r="16" opacity=".6"/><circle cx="42" cy="48" r="6" fill="currentColor"/>`,
+ forks:`<path d="M34 14 V46 Q34 56 42 56 Q50 56 50 46 V14 M42 56 V76"/><path d="M24 30 q-6 6 0 12 M60 30 q6 6 0 12" opacity=".6"/>`,
+ angels:`<path d="M42 30 C30 10 8 18 14 36 C18 46 34 42 42 34 C50 42 66 46 70 36 C76 18 54 10 42 30Z"/><circle cx="42" cy="22" r="5"/><path d="M42 36 V70"/>`,
+ breath:`<circle cx="42" cy="42" r="10"/><circle cx="42" cy="42" r="20" opacity=".6"/><circle cx="42" cy="42" r="30" opacity=".3"/>`,
+ meditate:`<path d="M50 16 A22 22 0 1 0 64 52 A18 18 0 1 1 50 16Z" fill="currentColor"/>`,
+ chakras:`${[16,26,36,46,56,66].map(y=>`<circle cx="42" cy="${y}" r="4" fill="currentColor"/>`).join("")}<circle cx="42" cy="9" r="4"/>`,
+ wishes:`<circle cx="42" cy="50" r="3" fill="currentColor"/>${[0,30,60,90,120,150,180,210,240,270,300,330].map(a=>`<path d="M42 50 L${(42+Math.cos(a*Math.PI/180)*22).toFixed(1)} ${(50+Math.sin(a*Math.PI/180)*22).toFixed(1)}"/><circle cx="${(42+Math.cos(a*Math.PI/180)*24).toFixed(1)}" cy="${(50+Math.sin(a*Math.PI/180)*24).toFixed(1)}" r="2"/>`).join("")}<path d="M42 52 V78"/>`,
+ cosmos:`<circle cx="42" cy="42" r="28"/><circle cx="42" cy="42" r="18" opacity=".6"/><path d="M42 14 V70 M14 42 H70" opacity=".5"/><circle cx="60" cy="30" r="4" fill="currentColor"/><circle cx="28" cy="52" r="3" fill="currentColor"/>`
+};
+const RIT=["Hum for one minute","Drink water with an intention","Touch the earth or a tree","Say one kind thing to yourself","Rest with no screen for 20 minutes"];
+
+/* ================= helpers ================= */
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store={get(k,d){try{const v=localStorage.getItem("fyz-"+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem("fyz-"+k,JSON.stringify(v))}catch(e){}}};
+const stats=store.get("stats",{minutes:0,forks:0,gongs:0,lanterns:0,koans:0,portals:0});
+const bump=(k,n=1)=>{stats[k]=(stats[k]||0)+n;store.set("stats",stats)};
+let saved=store.get("saved",[]),myF=store.get("freq",null),filt={f:""};
+const price=p=>p?"$".repeat(p):"Free";
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const heart='<svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.6-9.5-9.2C1.2 8.6 3.3 5 6.8 5c2 0 3.6 1.1 5.2 3 1.6-1.9 3.2-3 5.2-3 3.5 0 5.6 3.6 4.3 6.8C19.5 16.4 12 21 12 21z" fill="currentColor"/></svg>';
+const card=s=>`<article class="session"><div>${s.f.map(f=>`<span class="tag" style="background:var(--${f})">${F[f].word}</span>`).join("")}</div><h3>${esc(s.n)}</h3><p style="margin:0">${esc(s.d)}</p>${s.mods.length?`<ul>${s.mods.map(m=>`<li>${esc(m)}</li>`).join("")}</ul>`:""}<div class="row" style="display:flex;align-items:center;margin-top:auto"><a href="https://www.healingbyvictoria.com/" target="_blank" rel="noopener" style="font-weight:700">Learn more and book</a><button class="heart" data-save="${s.id}" aria-pressed="${saved.includes(s.id)}" aria-label="Save ${esc(s.n)}">${heart}</button></div></article>`;
+let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+
+/* ================= audio ================= */
+let AC=null,OUT=null,AN=null,muted=false,vol=.7;const live={};
+let unlocked=false;const SILENT="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=";
+function unlockAudio(){try{if(navigator.audioSession)navigator.audioSession.type="playback"}catch(e){}A();if(!unlocked){unlocked=true;try{const el=new Audio(SILENT);el.setAttribute("playsinline","");el.play().catch(()=>{})}catch(e){}try{const b=AC.createBuffer(1,1,22050),s=AC.createBufferSource();s.buffer=b;s.connect(AC.destination);s.start(0)}catch(e){}}}
+["pointerdown","touchend","click","keydown"].forEach(t=>document.addEventListener(t,unlockAudio,{capture:true,passive:true}));
+function A(){if(!AC){AC=new (window.AudioContext||window.webkitAudioContext)();OUT=AC.createGain();OUT.gain.value=muted?0:vol;AN=AC.createAnalyser();AN.fftSize=256;OUT.connect(AN);AN.connect(AC.destination)}if(AC.state==="suspended")AC.resume();return AC}
+function env(g,t0,a,peak,d){g.gain.setValueAtTime(0.0001,t0);g.gain.exponentialRampToValueAtTime(peak,t0+a);g.gain.exponentialRampToValueAtTime(0.0001,t0+a+d)}
+function bowl(f,dur=7,amp=.3){const c=A(),t=c.currentTime;[[1,1],[2.76,.45],[5.4,.22],[8.9,.1]].forEach(([p,a])=>{[0,.8].forEach(det=>{const o=c.createOscillator(),g=c.createGain();o.type="sine";o.frequency.value=f*p+det;env(g,t,.008,amp*a*.5,dur/p**.3);o.connect(g);g.connect(OUT);o.start(t);o.stop(t+dur+.1)})})}
+function gong(){const c=A(),t=c.currentTime;[[1,1],[1.48,.6],[2.1,.45],[2.9,.3],[3.7,.2],[5.2,.1]].forEach(([p,a])=>{const o=c.createOscillator(),g=c.createGain();o.frequency.value=82*p;env(g,t,.02,.35*a,9);o.connect(g);g.connect(OUT);o.start(t);o.stop(t+9.2)});
+ const n=noiseSrc("white"),f=c.createBiquadFilter(),g=c.createGain();f.type="lowpass";f.frequency.value=900;env(g,t,.005,.25,1.2);n.connect(f);f.connect(g);g.connect(OUT);n.start(t);n.stop(t+1.4)}
+function tone(f,dur=3,amp=.18,type="sine"){const c=A(),t=c.currentTime,o=c.createOscillator(),g=c.createGain();o.type=type;o.frequency.value=f;g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(amp,t+.4);g.gain.exponentialRampToValueAtTime(0.0001,t+dur);o.connect(g);g.connect(OUT);o.start(t);o.stop(t+dur+.05)}
+function chime(){const c=A();[1318,1760,2093].forEach((f,i)=>setTimeout(()=>bowl(f,1.8,.12),i*90))}
+let NB={};function noiseSrc(kind){const c=A();if(!NB[kind]){const len=c.sampleRate*4,b=c.createBuffer(1,len,c.sampleRate),d=b.getChannelData(0);let last=0;for(let i=0;i<len;i++){const w=Math.random()*2-1;if(kind==="brown"){last=(last+.02*w)/1.02;d[i]=last*3.5}else d[i]=w}NB[kind]=b}const s=c.createBufferSource();s.buffer=NB[kind];s.loop=true;return s}
+function ambience(kind){stopLive("amb");if(!kind)return;const c=A(),g=c.createGain(),nodes=[];let src;
+ if(kind==="rain"){src=noiseSrc("white");const hp=c.createBiquadFilter(),lp=c.createBiquadFilter();hp.type="highpass";hp.frequency.value=900;lp.type="lowpass";lp.frequency.value=7000;src.connect(hp);hp.connect(lp);lp.connect(g);g.gain.value=.07}
+ else if(kind==="ocean"){src=noiseSrc("brown");const lp=c.createBiquadFilter();lp.type="lowpass";lp.frequency.value=600;src.connect(lp);lp.connect(g);g.gain.value=.25;const l=c.createOscillator(),lg=c.createGain();l.frequency.value=.09;lg.gain.value=.2;l.connect(lg);lg.connect(g.gain);l.start();nodes.push(l)}
+ else if(kind==="forest"){src=noiseSrc("brown");const bp=c.createBiquadFilter();bp.type="bandpass";bp.frequency.value=400;src.connect(bp);bp.connect(g);g.gain.value=.3;const it=setInterval(()=>{if(Math.random()<.5)tone(2400+Math.random()*1600,.25,.03,"sine")},700);nodes.push({stop:()=>clearInterval(it)})}
+ else if(kind==="om"){src=c.createOscillator();src.frequency.value=136.1;const s2=c.createOscillator();s2.frequency.value=272.2;const g2=c.createGain();g2.gain.value=.3;s2.connect(g2);g2.connect(g);s2.start();nodes.push(s2);src.connect(g);g.gain.value=.08}
+ g.connect(OUT);src.start();nodes.push(src);live.amb=nodes}
+function binaural(beat){stopLive("bin");if(!beat)return;const c=A(),nodes=[];[[-1,200],[1,200+beat]].forEach(([pan,f])=>{const o=c.createOscillator(),p=c.createStereoPanner(),g=c.createGain();o.frequency.value=f;p.pan.value=pan;g.gain.value=.12;o.connect(g);g.connect(p);p.connect(OUT);o.start();nodes.push(o)});live.bin=nodes}
+function stopLive(k){(live[k]||[]).forEach(n=>{try{n.stop()}catch(e){}});delete live[k]}
+function setMute(m){muted=m;if(OUT)OUT.gain.value=m?0:vol;$("#sndBtn").setAttribute("aria-pressed",!m);$("#sndBtn").setAttribute("aria-label",m?"Sound off":"Sound on");
+ $("#sndBtn").innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/>${m?'<path d="M17 9l5 6M22 9l-5 6"/>':'<path d="M16 8a5 5 0 010 8M19 5a9 9 0 010 14"/>'}</svg>`}
+
+/* ================= the fairy ================= */
+const G="#e8b4a2",G2="#ffe2d8";
+const EX=[285,315],EY=196,MY=222;
+function gate(){
+ const leaf=(x,y,r,s=1,c="#4f9a7a")=>`<path transform="translate(${x} ${y}) rotate(${r}) scale(${s})" d="M0 0 Q9 -7 18 0 Q9 7 0 0Z" fill="${c}"/>`;
+ const bloom=(x,y,c,r=4)=>`<g transform="translate(${x} ${y})" filter="url(#glow)">${[0,72,144,216,288].map(a=>`<ellipse cx="${(Math.cos(a*Math.PI/180)*r).toFixed(1)}" cy="${(Math.sin(a*Math.PI/180)*r).toFixed(1)}" rx="${r*.8}" ry="${r*.55}" transform="rotate(${a} ${(Math.cos(a*Math.PI/180)*r).toFixed(1)} ${(Math.sin(a*Math.PI/180)*r).toFixed(1)})" fill="${c}"/>`).join("")}<circle r="${r*.45}" fill="#fff6c8"/></g>`;
+ const arch=t=>{const p=[[80,630],[40,300],[170,40],[300,36]],q=[[300,36],[430,40],[560,300],[520,630]];const B=(P,u)=>{const m=1-u;return[m*m*m*P[0][0]+3*m*m*u*P[1][0]+3*m*u*u*P[2][0]+u*u*u*P[3][0],m*m*m*P[0][1]+3*m*m*u*P[1][1]+3*m*u*u*P[2][1]+u*u*u*P[3][1]]};return t<.5?B(p,t*2):B(q,(t-.5)*2)};
+ let lv="",bl="";for(let i=1;i<80;i++){const t=i/80,[x,y]=arch(t);lv+=leaf(x.toFixed(1),y.toFixed(1),(i*47)%360,.9+(i%3)*.2,i%3?"#4f9a7a":"#3a7a62");if(i%6===0)bl+=bloom((x+(i%2?8:-8)).toFixed(1),y.toFixed(1),["#ff9fcf","#ffffff","#c9a7ff","#ffd1ec"][i%4],4+(i%3))}
+ const stars=Array.from({length:60},(_,i)=>`<circle cx="${(rnd()*600).toFixed(0)}" cy="${(rnd()*420).toFixed(0)}" r="${(.4+rnd()*1.4).toFixed(1)}" fill="#fff" opacity="${(.3+rnd()*.6).toFixed(2)}"/>`).join("");
+ const ticks=Array.from({length:72},(_,i)=>{const a=i*5*Math.PI/180,r1=i%6?222:212,f=v=>v.toFixed(1);return `<line x1="${f(300+Math.cos(a)*r1)}" y1="${f(290+Math.sin(a)*r1)}" x2="${f(300+Math.cos(a)*228)}" y2="${f(290+Math.sin(a)*228)}" stroke="${G}" stroke-width="${i%6?1:2}"/>`}).join("");
+ const rings=[0,1,2,3,4,5,6,7,8].map(i=>`<circle cx="300" cy="262" r="${36+i*12.5}" fill="none" stroke="${i%2?"#5a3412":"#ffd9a8"}" stroke-width="${i%2?1.2:.8}" opacity="${i%2?.45:.35}"/>`).join("");
+ const hammer=Array.from({length:70},()=>{const a=rnd()*6.283,r=40+rnd()*100;return `<ellipse cx="${(300+Math.cos(a)*r).toFixed(1)}" cy="${(262+Math.sin(a)*r).toFixed(1)}" rx="${(3+rnd()*4).toFixed(1)}" ry="${(2+rnd()*3).toFixed(1)}" fill="#fff" opacity="${(.05+rnd()*.12).toFixed(2)}"/>`}).join("");
+ return `${stars}
+ <circle cx="488" cy="96" r="70" fill="url(#moonGlow)"/><circle cx="488" cy="96" r="40" fill="url(#moonG)"/>
+ <g class="spin">${ticks}<circle cx="300" cy="290" r="228" fill="none" stroke="${G}" opacity=".45"/></g>
+ <path d="M180 92 Q300 70 420 92" stroke="#6b4a2e" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="180" cy="92" r="7" fill="${G}"/><circle cx="420" cy="92" r="7" fill="${G}"/>
+ <g class="hot" data-hs="gong" id="gongG">
+  <path d="M236 90 L262 120 M364 90 L338 120" stroke="#c9a27a" stroke-width="3"/>
+  <circle cx="300" cy="262" r="152" fill="url(#gongRim)"/><circle cx="300" cy="262" r="140" fill="url(#gongFace)"/>${rings}${hammer}
+  <circle cx="300" cy="262" r="34" fill="url(#gongBoss)"/><ellipse cx="288" cy="250" rx="12" ry="7" fill="#fff" opacity=".35" filter="url(#b2)"/>
+  <circle cx="300" cy="262" r="152" fill="none" stroke="#ffe2b8" stroke-width="1.5" opacity=".6"/>
+ </g>
+ <path d="M80 630 C40 300 170 40 300 36 C430 40 560 300 520 630" stroke="#2e5a48" stroke-width="7" fill="none"/>${lv}${bl}`;
+}
+function eye(x,y,id){return `<clipPath id="c${id}"><path d="M${x-12} ${y} Q${x-2} ${y-9} ${x+12} ${y-1} Q${x} ${y+7} ${x-12} ${y}Z"/></clipPath>
+ <ellipse cx="${x}" cy="${y-2}" rx="15" ry="8" fill="#c9a7ff" opacity=".35" filter="url(#b2)"/>
+ <g clip-path="url(#c${id})"><path d="M${x-12} ${y} Q${x-2} ${y-9} ${x+12} ${y-1} Q${x} ${y+7} ${x-12} ${y}Z" fill="#fbf6ff"/>
+  <g class="iris"><circle cx="${x}" cy="${y}" r="5.4" fill="url(#irisG)"/><circle cx="${x}" cy="${y}" r="2.3" fill="#1d1030"/><circle cx="${x-1.8}" cy="${y-2}" r="1.5" fill="#fff"/><circle cx="${x+1.6}" cy="${y+1.4}" r=".7" fill="#fff" opacity=".8"/></g>
+  <path class="lid" fill="url(#lidG)"/></g>
+ <path class="lash" stroke="#3a2040" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+ <path d="M${id==="L"?x-12:x+12} ${y} l${id==="L"?-5:5} -4" stroke="#3a2040" stroke-width="1.6" stroke-linecap="round"/>
+ <path d="M${x-9} ${y-11} Q${x} ${y-15} ${x+10} ${y-11}" stroke="#a07a90" stroke-width="1.6" fill="none" stroke-linecap="round"/>`}
+function hair(n,fn,cols,w){let s="";for(let i=0;i<n;i++){const[x1,y1,cx,cy,x2,y2]=fn(i,n);s+=`<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" stroke="${cols[i%cols.length]}" stroke-width="${(w[0]+rnd()*(w[1]-w[0])).toFixed(2)}" fill="none" stroke-linecap="round" opacity="${(.5+rnd()*.5).toFixed(2)}"/>`}return s}
+function master(){
+ seed=21;
+ const back=gate();
+ const strands=hair(44,(i,n)=>{const side=i%2?1:-1,sx=300+side*(30+rnd()*12),sy=170+rnd()*30,ex=300+side*(52+rnd()*40),ey=290+rnd()*80;return[sx,sy,300+side*(62+rnd()*20),(sy+ey)/2,ex,ey]},["#f3e6ff","#d9c2ff","#c9a7ff","#ffd1ec"],[1.2,2.6]);
+ const flowers=[[262,168],[272,156],[286,149],[300,146],[314,149],[328,156],[338,168]].map(([x,y],i)=>`<g transform="translate(${x} ${y})">${[0,72,144,216,288].map(a=>`<ellipse cx="${(Math.cos(a*Math.PI/180)*4.5).toFixed(1)}" cy="${(Math.sin(a*Math.PI/180)*4.5).toFixed(1)}" rx="4.2" ry="2.8" transform="rotate(${a} ${(Math.cos(a*Math.PI/180)*4.5).toFixed(1)} ${(Math.sin(a*Math.PI/180)*4.5).toFixed(1)})" fill="${["#ff9fcf","#ffffff","#c9a7ff","#ffd1ec"][i%4]}"/>`).join("")}<circle r="2.2" fill="#fff2a8"/></g>`).join("");
+ const sparkles=Array.from({length:26},()=>`<circle cx="${(170+rnd()*260).toFixed(1)}" cy="${(400+rnd()*160).toFixed(1)}" r="${(.6+rnd()*1.4).toFixed(1)}" fill="#fff" opacity="${(.4+rnd()*.6).toFixed(2)}"/>`).join("");
+ const wing=(d,cls)=>`<g class="${cls}"><path d="${d}" fill="url(#wingG)" stroke="#ffffff" stroke-opacity=".7" stroke-width="1.4"/></g>`;
+ const cks=CK.map(c=>`<g class="ck hot" data-ck="${c.k}" transform="translate(300 ${c.y})"><circle r="14" fill="transparent"/><circle class="ring" r="13" fill="none" stroke="${c.c}" stroke-width="2"/><circle class="core" r="6" fill="${c.c}" filter="url(#glow)"/></g>`).join("");
+ return `<defs>
+  <radialGradient id="auraG"><stop offset="0" stop-color="var(--tune)" stop-opacity=".7"/><stop offset=".5" stop-color="var(--tune)" stop-opacity=".16"/><stop offset="1" stop-color="var(--tune)" stop-opacity="0"/></radialGradient>
+  <radialGradient id="moonG" cx=".4" cy=".35"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#f1e6ff"/><stop offset="1" stop-color="#cbb8ef"/></radialGradient>
+  <radialGradient id="moonGlow"><stop offset=".4" stop-color="#e6d8ff" stop-opacity=".45"/><stop offset="1" stop-color="#e6d8ff" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gongFace" cx=".42" cy=".38"><stop offset="0" stop-color="#ffd6a0"/><stop offset=".45" stop-color="#d99a55"/><stop offset=".85" stop-color="#9a5d2a"/><stop offset="1" stop-color="#6e3d18"/></radialGradient>
+  <radialGradient id="gongRim" cx=".45" cy=".4"><stop offset=".85" stop-color="#5a3010"/><stop offset=".95" stop-color="#e9b77a"/><stop offset="1" stop-color="#4a250a"/></radialGradient>
+  <radialGradient id="gongBoss" cx=".38" cy=".32"><stop offset="0" stop-color="#fff0cf"/><stop offset=".5" stop-color="#e2a560"/><stop offset="1" stop-color="#8a5220"/></radialGradient>
+  <linearGradient id="wingG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fe3ec" stop-opacity=".65"/><stop offset=".5" stop-color="#c9a7ff" stop-opacity=".5"/><stop offset="1" stop-color="#ff9fcf" stop-opacity=".55"/></linearGradient>
+  <linearGradient id="hairG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6ecff"/><stop offset=".5" stop-color="#cdb3f7"/><stop offset="1" stop-color="#ff9fcf"/></linearGradient>
+  <linearGradient id="dressG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9c2ff"/><stop offset=".5" stop-color="#ffb8df"/><stop offset="1" stop-color="#7a4fb8"/></linearGradient>
+  <linearGradient id="bodiceG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd1ec"/><stop offset="1" stop-color="#b58ae8"/></linearGradient>
+  <radialGradient id="skinH" cx=".4" cy=".32" r=".8"><stop offset="0" stop-color="#fff0e6"/><stop offset=".6" stop-color="#f6cdb8"/><stop offset="1" stop-color="#d79c86"/></radialGradient>
+  <linearGradient id="skinB" x1="0" x2="1"><stop offset="0" stop-color="#e2ab95"/><stop offset=".5" stop-color="#fbdccb"/><stop offset="1" stop-color="#d79c86"/></linearGradient>
+  <linearGradient id="lidG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3c6b4"/><stop offset="1" stop-color="#d8a6c4"/></linearGradient>
+  <radialGradient id="irisG"><stop offset="0" stop-color="#b9a0ff"/><stop offset=".7" stop-color="#6a4fd0"/><stop offset="1" stop-color="#2a1a5a"/></radialGradient>
+  <radialGradient id="orbG"><stop offset="0" stop-color="#ffffff"/><stop offset=".4" stop-color="#ffd1ec"/><stop offset="1" stop-color="#c9a7ff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="rayg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${G2}" stop-opacity=".3"/><stop offset="1" stop-color="${G2}" stop-opacity="0"/></linearGradient>
+  <filter id="b2"><feGaussianBlur stdDeviation="2"/></filter><filter id="b6"><feGaussianBlur stdDeviation="6"/></filter>
+  <filter id="glow" x="-1" y="-1" width="3" height="3"><feGaussianBlur stdDeviation="3" result="g"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="rim" x="-.2" y="-.2" width="1.4" height="1.4"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ffd1ec" flood-opacity=".45"/></filter>
+ </defs>
+ <g id="back">${back}</g>
+ <g id="mid"><circle id="aura" cx="300" cy="300" r="220" fill="url(#auraG)"/></g>
+ <g id="front"><g class="float"><g id="master" filter="url(#rim)">
+  <ellipse cx="300" cy="612" rx="120" ry="12" fill="#c9a7ff" opacity=".35" filter="url(#b6)"/>
+  <g class="hot" data-hs="wings">
+   ${wing("M292 300 C240 220 150 150 112 190 C82 225 150 300 286 330Z","wingL")}${wing("M308 300 C360 220 450 150 488 190 C518 225 450 300 314 330Z","wingR")}
+   ${wing("M290 340 C230 360 170 420 190 460 C210 490 262 420 292 358Z","wingL")}${wing("M310 340 C370 360 430 420 410 460 C390 490 338 420 308 358Z","wingR")}
+   <path d="M286 320 C230 270 170 220 130 200 M286 326 C220 300 170 280 140 262 M290 350 C250 380 215 420 200 452 M314 320 C370 270 430 220 470 200 M314 326 C380 300 430 280 460 262 M310 350 C350 380 385 420 400 452" stroke="#ffffff" stroke-opacity=".45" stroke-width="1" fill="none"/>
+  </g>
+  <path d="M256 196 C228 250 226 330 232 380 C262 400 338 400 368 380 C374 330 372 250 344 196 C330 170 270 170 256 196Z" fill="url(#hairG)"/>
+  <g class="breathe">
+   <path d="M266 392 C232 432 192 500 146 556 Q186 540 206 566 Q236 538 262 572 Q288 546 300 578 Q312 546 338 572 Q364 538 394 566 Q414 540 454 556 C408 500 368 432 334 392Z" fill="url(#dressG)" opacity=".95"/>
+   <path d="M278 400 C262 450 236 510 214 556 M300 402 V570 M322 400 C338 450 364 510 386 556" stroke="#ffffff" stroke-opacity=".3" fill="none"/>
+   ${sparkles}
+   <path d="M289 236 L289 292 Q300 300 311 292 L311 236Z" fill="url(#skinB)"/>
+   <path d="M258 304 Q266 288 300 290 Q334 288 342 304 L338 318 L262 318Z" fill="url(#skinB)"/>
+   <path d="M262 312 Q282 330 300 318 Q318 330 338 312 L334 362 Q322 392 300 396 Q278 392 266 362Z" fill="url(#bodiceG)"/>
+   <path d="M266 312 Q284 340 300 320 Q316 340 334 312" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="1.5"/>
+   <ellipse cx="300" cy="392" rx="36" ry="7" fill="#ffd1ec" opacity=".8"/>
+   <g class="hot" data-hs="palm">
+    <path d="M262 306 C240 318 226 336 222 352 C218 362 206 360 196 350" stroke="url(#skinB)" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <ellipse cx="188" cy="345" rx="13" ry="6" transform="rotate(-18 188 345)" fill="#f6cdb8"/>
+    <circle cx="186" cy="322" r="18" fill="url(#orbG)"/><circle cx="186" cy="322" r="5" fill="#fff"/>
+   </g>
+   <g class="hot" data-hs="wand">
+    <path d="M338 306 C362 318 376 330 382 322 C390 310 398 292 402 282" stroke="url(#skinB)" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <path d="M398 302 L426 150 L440 96" stroke="transparent" stroke-width="30" stroke-linecap="round"/><path d="M398 302 L426 150" stroke="${G}" stroke-width="4" stroke-linecap="round"/>
+    <path d="M416 154 L424 104 M436 158 L444 108 M416 154 Q424 166 436 158" stroke="#fff1ea" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+    <circle cx="403" cy="282" r="9" fill="#f6cdb8"/>
+    <g transform="translate(434 92)" filter="url(#glow)"><path d="M0 -12 L3 -3 L12 0 L3 3 L0 12 L-3 3 L-12 0 L-3 -3Z" fill="#fff"/></g>
+   </g>
+   <g id="head"><g transform="translate(0 26)">
+    ${strands}
+    <path d="M263 200 L242 174 L262 214Z M337 200 L358 174 L338 214Z" fill="url(#skinH)"/>
+    <g class="hot" data-hs="face">
+     <ellipse cx="300" cy="196" rx="38" ry="46" fill="url(#skinH)"/>
+     <ellipse cx="322" cy="214" rx="16" ry="30" fill="#c98f7a" opacity=".25" filter="url(#b6)"/>
+     <ellipse cx="286" cy="170" rx="14" ry="8" fill="#fff" opacity=".35" filter="url(#b6)"/>
+     ${eye(EX[0],EY,"L")}${eye(EX[1],EY,"R")}
+     <path d="M300 200 Q297 212 302 214" stroke="#c98f7a" stroke-width="1.4" fill="none"/>
+     <ellipse cx="276" cy="214" rx="9" ry="5" fill="#ff8fb8" opacity=".35" filter="url(#b2)"/><ellipse cx="324" cy="214" rx="9" ry="5" fill="#ff8fb8" opacity=".35" filter="url(#b2)"/>
+     ${[[272,206],[278,210],[322,208],[328,204]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r=".9" fill="#fff"/>`).join("")}
+     <ellipse id="mouthIn" cx="300" cy="${MY}" rx="7" ry="0.4" fill="#6a1f3a"/><path id="teeth" d="M295 221 h10" stroke="#fff" stroke-width="1.6" opacity="0"/>
+     <path id="lip" d="M293 224 Q300 228 307 224" stroke="#e0708f" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+     <path id="mouth" d="M292 220 Q300 223 308 220" stroke="#d05c80" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+     <g id="beard"></g>
+    </g>
+    <path d="M266 166 C250 190 252 236 262 262 M334 166 C350 190 348 236 338 262 M272 160 C284 150 300 156 312 166" stroke="url(#hairG)" stroke-width="9" fill="none" stroke-linecap="round"/>
+    ${flowers}
+    <path d="M300 166 l4 6 l-4 6 l-4 -6Z" fill="#c9a7ff" filter="url(#glow)"/>
+   </g></g>
+  </g>
+  ${cks}
+ </g></g></g>`;
+}
+function setLids(c){$$("#head .lid").forEach((p,i)=>{const x=EX[i],y=EY,ly=y-9+15*c;p.setAttribute("d",`M${x-15} ${y-12} H${x+15} V${ly} Q${x} ${ly+3*(1-c)+2} ${x-15} ${ly}Z`)});
+ $$("#head .lash").forEach((p,i)=>{const x=EX[i],y=EY,ly=y-9+15*c;p.setAttribute("d",`M${x-12} ${Math.min(ly,y)} Q${x} ${Math.min(ly+3*(1-c)+1,y+6)} ${x+12} ${Math.min(ly,y)}`)})}
+
+/* ================= particles ================= */
+const cv=$("#fx"),cx=cv.getContext("2d");let P=[],B=[],hoverPt=null;
+function size(){const r=cv.getBoundingClientRect();if(!r.width)return;const d=devicePixelRatio||1;cv.width=r.width*d;cv.height=r.height*d;cx.setTransform(d*r.width/600,0,0,d*r.height/640,0,0)}
+for(let i=0;i<50;i++)P.push({x:Math.random()*600,y:80+Math.random()*540,vx:(Math.random()-.5)*.3,vy:-.1-Math.random()*.3,r:1+Math.random()*2.2,t:Math.random()*6});
+function burst(x=300,y=300,col,n=36){const c=col||getComputedStyle(document.documentElement).getPropertyValue("--tune").trim()||G2;for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=1+Math.random()*3.5;B.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-1,r:1.5+Math.random()*2.5,l:1,c:i%3?G2:c})}}
+function frame(){cx.clearRect(0,0,600,640);
+ if(hoverPt&&!RM&&Math.random()<.6)B.push({x:hoverPt.x+(Math.random()-.5)*14,y:hoverPt.y,vx:(Math.random()-.5)*1.2,vy:-.6-Math.random()*1.4,r:1.2+Math.random()*2,l:1,c:hoverPt.c});
+ for(const p of P){p.x+=p.vx;p.y+=p.vy;p.t+=.03;if(p.y<60){p.y=630;p.x=Math.random()*600}if(p.x<0||p.x>600)p.vx*=-1;const a=.3+.7*Math.abs(Math.sin(p.t));cx.fillStyle=`rgba(255,226,216,${a})`;cx.shadowColor=G2;cx.shadowBlur=10;cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fill()}
+ B=B.filter(b=>b.l>0);for(const b of B){b.x+=b.vx;b.y+=b.vy;b.vy+=.03;b.l-=.016;cx.globalAlpha=Math.max(b.l,0);cx.fillStyle=b.c;cx.shadowColor=b.c;cx.beginPath();cx.arc(b.x,b.y,b.r,0,7);cx.fill();cx.globalAlpha=1}
+ cx.shadowBlur=0;if(!RM)requestAnimationFrame(frame)}
+
+/* ================= fairy behaviour ================= */
+let busy=false,mode="menu",mtimer=null,score={},qi=0,lastMove=Date.now(),deep=false,lastFast=0,clicks=[],lidBase=.28;
+const tune=c=>document.documentElement.style.setProperty("--tune",c||(myF?`var(--${myF})`:G2));
+function say(t,opts=[],cite="",silent=false,spoken){$("#say").textContent=t;$("#say").dataset.spoken=spoken||t;if(!silent)speak(spoken||t);$("#cite").textContent=cite?"— "+cite:"";$("#opts").innerHTML=opts.map((o,i)=>`<button class="opt" data-o="${i}">${o[0]}</button>`).join("");$("#opts").onclick=e=>{const b=e.target.closest("[data-o]");if(b)opts[+b.dataset.o][1]()}}
+const greet=()=>{const h=new Date().getHours();return GREETS[h<5?0:h<12?1:h<17?2:h<21?3:4]};
+function menu(t){mode="menu";say(t||greet()+" What is your heart calling for?",[["Bless me",quote],["Angel message",angelMsg],["Chant with me",chantMenu],["Read my frequency",startQuiz],["Breathe with me",meditate],["Enter the Sanctuary",()=>location.hash="sanctuary"]].concat(myF?[[`My frequency: ${F[myF].name}`,()=>result(myF)]]:[]))}
+function quote(){const q=pick(QUOTES);mode="menu";smile();say(q[0],[["Another blessing",quote],["Angel message",angelMsg],["Enter the Sanctuary",()=>location.hash="sanctuary"]]);burst(300,200,G2,18)}
+function angelMsg(){const k=pick(KOANS);mode="menu";smile();bump("koans");if(!muted)bowl(852,3,.08);burst(186,322,"#ffd1ec",30);say(k,[["Another message",angelMsg],["Angel Messages room",()=>location.hash="angels"],["Back",()=>menu()]])}
+function startQuiz(){score={};qi=0;mode="quiz";ask()}
+function ask(){if(qi>=Q.length){const best=Object.keys(F).sort((a,b)=>(score[b]||0)-(score[a]||0))[0];myF=best;store.set("freq",best);burst();chime();result(best);return}
+ const s=Q[qi];say(s.q,s.a.map(a=>[a[0],()=>{for(const[k,v]of Object.entries(a[1]))score[k]=(score[k]||0)+v;qi++;ask()}]))}
+function result(f){tune(`var(--${f})`);smile();mode="menu";
+ say(`I can feel it now. Your frequency is ${F[f].name}. ${F[f].line}`,[["Take me there",()=>location.hash=F[f].room],["Give me a ritual",()=>say(F[f].ritual,[["Thank you, Fairy",()=>menu("May it bring you home to yourself. What next?")],["Take me there",()=>location.hash=F[f].room]])],["Book with Victoria",()=>location.hash="sessions"],["Ask again",startQuiz]])}
+function smile(){const m=$("#mouth");m.setAttribute("d","M291 219 Q300 227 309 219");setTimeout(()=>m.setAttribute("d","M292 220 Q300 223 308 220"),1600)}
+function meditate(){if(busy)return;busy=true;mode="med";setLids(1);let i=0;const ph=[["Breathe in",1.25],["Hold",1.25],["Breathe out",1],["Hold",1]],au=$("#aura");
+ say("Breathe with me, love. Four slow rounds. Follow my light.",[["Stop",stop]]);
+ const tick=()=>{if(i>=16){stop();burst();chime();bump("minutes",1);menu("Beautiful. Feel that sparkle? That is you, coming home.");return}
+  const[w,s]=ph[i%4];$("#say").textContent=`${w}…  round ${Math.floor(i/4)+1} of 4`;speak(w);au.style.transform=`scale(${s})`;if(i%4===0&&!muted)tone(432,4,.05);i++;mtimer=setTimeout(tick,4000)};
+ mtimer=setTimeout(tick,1200);
+ function stop(){clearTimeout(mtimer);busy=false;setLids(lidBase);au.style.transform="";if(i<16)menu("Every breath counts, darling. What next?")}}
+function enterDeep(){if(deep||busy||chanting)return;deep=true;$("#stage").classList.add("deep");setLids(1);$("#aura").style.transform="scale(1.2)";say("…the Fairy has drifted into a dream and is floating among the stars. Move gently to wake her.",[],"",true)}
+function wake(){if(!deep)return;deep=false;$("#stage").classList.remove("deep");setLids(lidBase);$("#aura").style.transform="";menu("Oh! You're back. I was dancing with the moon.")}
+function blink(){if(!busy&&!deep){setLids(1);setTimeout(()=>{if(!busy&&!deep)setLids(lidBase)},140)}setTimeout(blink,2400+Math.random()*3600)}
+function enlightenment(){const st=$("#stage");st.classList.add("rainbow","deep","flap");CK.forEach((c,i)=>setTimeout(()=>{burst(300,c.y,c.c,20);if(!muted)tone(c.hz,1.2,.06)},i*180));say("Seven touches… you've lit up all seven chakras! Rainbow magic.",[["Float back down",()=>{st.classList.remove("rainbow","deep","flap");menu()}]]);setTimeout(()=>{st.classList.remove("rainbow","deep","flap")},9000)}
+const HS={
+ face:["The Fairy","Touch for a blessing"],
+ wand:["Tuning-fork wand","Strike the Ohm fork"],
+ palm:["Angel light","Receive an angel message"],
+ wings:["Her wings","Fly to the fairy glade"],
+ gong:["The sacred gong","Strike it"]
+};
+function tipShow(e,html,pt){const t=$("#tip"),r=$("#stage").getBoundingClientRect();t.innerHTML=html;t.style.left=(e.clientX-r.left)+"px";t.style.top=(e.clientY-r.top)+"px";t.style.opacity=1}
+function svgPt(e){const r=$("#scene").getBoundingClientRect();return{x:(e.clientX-r.left)/r.width*600,y:(e.clientY-r.top)/r.height*640}}
+let lastHum=0;
+function countBead(){}
+
+/* ================= portals ================= */
+let lastFocus=null;
+function portal({color,sk,title,body,opts}){lastFocus=document.activeElement;const p=$("#portal");p.style.setProperty("--pc",color);$("#pSk").textContent=sk||"";$("#pTitle").textContent=title;$("#pBody").innerHTML=body;$("#pOpts").innerHTML=opts.map((o,i)=>`<button class="opt" data-p="${i}">${o[0]}</button>`).join("");$("#pOpts").onclick=e=>{const b=e.target.closest("[data-p]");if(b)opts[+b.dataset.p][1]()};p.hidden=false;bump("portals");$("#pClose").focus()}
+function closePortal(){$("#portal").hidden=true;if(lastFocus)lastFocus.focus()}
+const go=h=>()=>{closePortal();location.hash=h};
+function chakraPortal(k){const c=CK.find(x=>x.k===k);tune(c.c);if(!muted)bowl(c.hz,5,.2);speak(c.af);burst(300,c.y,c.c,30);
+ portal({color:c.c,sk:`${c.s} · ${c.hz} Hz`,title:`${c.n} Chakra`,body:`<p><b>Where:</b> ${c.loc}<br><b>Element:</b> ${c.el}<br><b>Theme:</b> ${c.th}</p><p style="font-family:'Cormorant Garamond',serif;color:${c.c};font-size:22px">“${c.af}”</p><p class="small">Close your eyes, rest your attention at the ${c.loc.toLowerCase()}, and repeat the affirmation three times with the tone.</p>`,
+  opts:[[`Crystal bowl ${c.hz} Hz`,()=>bowl(c.hz,7,.25)],["Tuning fork",()=>forkTone(c.hz)],["Enter the Chakra Shrine",()=>{shrineSel=k;go("chakras")()}]]})}
+function gongHit(){const g=$("#gongG");g.classList.remove("shake");void g.getBBox();g.classList.add("shake");gongStrike(PLANETS[planet][1]/2,.85,.35);burst(300,262,"#ffd6a0",40);bump("gongs")}
+function hsClick(h){
+ if(h==="face"){quote();return}
+ if(h==="palm"){angelMsg();return}
+ if(h==="gong"){gongHit();say("The sacred gong… let it ring through every cell.",[["Strike again",gongHit],["Gong Bath room",()=>location.hash="gong"],["Back",()=>menu()]]);return}
+ if(h==="wand"){forkTone(136.1);burst(434,92,"#ffffff",30);portal({color:"#c9a7ff",sk:"Ohm fork · 136.1 Hz",title:"The Tuning-Fork Wand",body:"<p>Her wand is a tuning fork tuned to 136.1 Hz, the tone of the Earth's journey around the Sun. Hold still and let it hum.</p>",opts:[["Strike Ohm 136.1",()=>forkTone(136.1)],["Strike 528",()=>forkTone(528)],["Tuning Fork Studio",go("forks")]]});return}
+ if(h==="wings"){const st=$("#stage");st.classList.add("flap");setTimeout(()=>st.classList.remove("flap"),1600);burst(300,320,"#9fe3ec",50);if(!muted)chime();portal({color:"#9fe3ec",sk:"Fairy flight",title:"Fly to the Glade",body:"<p>Her wings can carry you into the moonlit fairy glade, where glowing flower rings open into every room of the sanctuary.</p>",opts:[["Walk the fairy glade",go("glade")],["Wish Garden",go("wishes")]]})}
+}
+
+/* ================= rooms ================= */
+function doors(){const h=ROOMS.map(([k,n,d])=>`<a class="door" href="#${k}"><svg viewBox="0 0 84 84" fill="none" stroke="${G2}" stroke-width="2" style="color:${G2};filter:drop-shadow(0 0 6px #c9a7ff)">${ICON[k]}</svg><b>${n}</b><span>${d}</span></a>`).join("");$("#roomsHome").innerHTML=h;$("#roomsDen").innerHTML=h}
+/* sound */
+let note=CK[3];const BEATS=[["Off",0],["Delta 2 Hz · deep rest",2],["Theta 6 Hz · meditation",6],["Alpha 10 Hz · calm focus",10]],AMBS=[["Off",null],["Rain","rain"],["Ocean","ocean"],["Forest","forest"],["Om drone","om"]];
+let beatSel=0,ambSel=null,ripples=[];
+function soundUI(){$("#oms").innerHTML=Object.entries(CHANTS).map(([k,v])=>`<button class="chip" data-om="${k}">${v[0]}</button>`).join("");$("#notes").innerHTML=CK.map(c=>`<button class="chip" data-note="${c.k}" aria-pressed="${note.k===c.k}"><span class="tag" style="background:${c.c};padding:0 7px">&nbsp;</span>${c.n} ${c.hz}</button>`).join("");
+ $("#beats").innerHTML=BEATS.map(([l,v])=>`<button class="chip" data-beat="${v}" aria-pressed="${beatSel===v}">${l}</button>`).join("");
+ $("#amb").innerHTML=AMBS.map(([l,v])=>`<button class="chip" data-amb="${v||""}" aria-pressed="${ambSel===v}">${l}</button>`).join("")}
+function strike(){bowl(note.hz,8,.3);ripples.push({r:20,c:note.c,l:1})}
+const bcv=$("#bowlCv"),bcx=bcv.getContext("2d");
+function soundLoop(){if($("#v-sound").hidden)return;const W=bcv.clientWidth,H=bcv.clientHeight,d=devicePixelRatio||1;if(bcv.width!==W*d){bcv.width=W*d;bcv.height=H*d}bcx.setTransform(d,0,0,d,0,0);bcx.clearRect(0,0,W,H);
+ if(AN){const a=new Uint8Array(AN.frequencyBinCount);AN.getByteFrequencyData(a);const n=64;for(let i=0;i<n;i++){const v=a[i]/255,ang=i/n*Math.PI*2,r0=Math.min(W,H)*.32,r1=r0+v*70;bcx.strokeStyle=note.c;bcx.globalAlpha=.25+v*.75;bcx.lineWidth=3;bcx.beginPath();bcx.moveTo(W/2+Math.cos(ang)*r0,H/2+Math.sin(ang)*r0);bcx.lineTo(W/2+Math.cos(ang)*r1,H/2+Math.sin(ang)*r1);bcx.stroke()}bcx.globalAlpha=1}
+ ripples=ripples.filter(r=>r.l>0);for(const r of ripples){r.r+=2.2;r.l-=.012;bcx.strokeStyle=r.c;bcx.globalAlpha=r.l;bcx.lineWidth=2;bcx.beginPath();bcx.ellipse(W/2,H/2,r.r,r.r*.6,0,0,7);bcx.stroke();bcx.globalAlpha=1}
+ requestAnimationFrame(soundLoop)}
+/* breath */
+const PAT={box:["Box 4·4·4·4","Steady and grounding. Used to calm nerves before big moments.",[4,4,4,4]],relax:["Relax 4·7·8","A long hold and longer exhale to settle into rest or sleep.",[4,7,8,0]],coherent:["Coherent 5.5·5.5","Even waves, about five breaths a minute. Balancing.",[5.5,0,5.5,0]],ocean:["Ocean 4·2·6","A short pause and long exhale, like waves on sand.",[4,2,6,0]],awaken:["Awaken 2·0·2","Quick, light breaths to lift energy. Stop if dizzy.",[2,0,2,0]]};
+let pat="box",bTimer=null,bStart=0;
+function breathUI(){$("#patterns").innerHTML=Object.entries(PAT).map(([k,v])=>`<button class="chip" data-pat="${k}" aria-pressed="${pat===k}">${v[0]}</button>`).join("");$("#patDesc").textContent=PAT[pat][1]}
+function breathStop(done){clearTimeout(bTimer);bTimer=null;const o=$("#orb2");o.style.transitionDuration="1s";o.style.transform="";$("#breathGo").textContent="Begin";const m=(Date.now()-bStart)/60000;if(bStart&&m>.2)bump("minutes",Math.round(m*10)/10);bStart=0;$("#orbTxt").textContent=done?"Well breathed. Notice the stillness.":"Choose a breath";if(done){chime()}}
+function breathGo(){if(bTimer){breathStop(false);return}const[, ,t]=PAT[pat],R=+$("#rounds").value,o=$("#orb2"),useT=$("#breathTone").checked;let i=0;bStart=Date.now();$("#breathGo").textContent="Stop";
+ const ph=[["Breathe in",2.4,t[0]],["Hold",2.4,t[1]],["Breathe out",1,t[2]],["Hold",1,t[3]]];
+ const step=()=>{if(i>=R*4){breathStop(true);return}const[w,s,d]=ph[i%4];i++;if(!d){step();return}o.style.transitionDuration=d+"s";o.style.transform=`scale(${s})`;$("#orbTxt").textContent=`${w} · ${d}s · round ${Math.ceil(i/4)} of ${R}`;
+  if(useT&&!muted&&(w==="Breathe in"||w==="Breathe out")){const c=A(),tt=c.currentTime,os=c.createOscillator(),g=c.createGain();os.frequency.setValueAtTime(w==="Breathe in"?174:261,tt);os.frequency.linearRampToValueAtTime(w==="Breathe in"?261:174,tt+d);g.gain.setValueAtTime(.0001,tt);g.gain.exponentialRampToValueAtTime(.07,tt+.4);g.gain.exponentialRampToValueAtTime(.0001,tt+d);os.connect(g);g.connect(OUT);os.start(tt);os.stop(tt+d+.05)}
+  bTimer=setTimeout(step,d*1000)};step()}
+/* gong bath */
+const PLANETS={earth:["Earth year (Om)",136.1,"The tone of the Earth's year around the Sun. Grounding and centering."],sun:["Sun",126.22,"Warm, radiant, life-giving."],moon:["Moon",210.42,"The synodic moon. Flowing and emotional."],venus:["Venus",221.23,"Love, beauty and harmony."],mars:["Mars",144.72,"Courage and drive."],jupiter:["Jupiter",183.58,"Expansion and generosity."],saturn:["Saturn",147.85,"Structure, patience, deep time."],neptune:["Neptune",211.44,"Dreams, intuition, the ocean of the unconscious."],platonic:["Platonic year",172.06,"The great 25,920-year cycle. Spacious and cosmic."]};
+let planet="earth",washT=null,washEnd=0,washMin=10;
+function gongStrike(base,intensity=.7,bright=.3){const c=A(),t=c.currentTime,rv=reverb(),R=[1,1.52,2.03,2.48,2.94,3.43,4.08,4.79,5.62,6.83,8.1,9.6];
+ const bus=c.createGain();bus.gain.value=.55*intensity;bus.connect(OUT);bus.connect(rv);
+ R.forEach((r,i)=>{const amp=Math.pow(1/(i+1),1.1-bright*.7)*(i>5?bright+.15:1),dec=16-i*1.05;[0,.4+Math.random()*1.2].forEach(dt=>{const o=c.createOscillator(),g=c.createGain();o.frequency.setValueAtTime(base*r*(intensity>.75?.994:1)+dt,t);o.frequency.linearRampToValueAtTime(base*r+dt,t+2.5);
+  const bloom=i>3&&intensity>.6?1.6:.02;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(Math.max(.0002,amp*.16),t+.02+(i>3?bloom*.5:0));g.gain.exponentialRampToValueAtTime(.0001,t+Math.max(2.5,dec));o.connect(g);g.connect(bus);o.start(t);o.stop(t+dec+.2)})});
+ const n=noiseSrc("white"),f=c.createBiquadFilter(),g=c.createGain();f.type="lowpass";f.frequency.value=600+bright*3000;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.25*intensity,t+.004);g.gain.exponentialRampToValueAtTime(.0001,t+.5);n.connect(f);f.connect(g);g.connect(bus);n.start(t);n.stop(t+.6)}
+function gongSVG(){seed=5;const rings=Array.from({length:10},(_,i)=>`<circle cx="200" cy="200" r="${46+i*13}" fill="none" stroke="${i%2?"#5a3412":"#ffd9a8"}" stroke-width="${i%2?1.4:1}" opacity=".4"/>`).join("");
+ const ham=Array.from({length:90},()=>{const a=rnd()*6.283,r=50+rnd()*120;return `<ellipse cx="${(200+Math.cos(a)*r).toFixed(1)}" cy="${(200+Math.sin(a)*r).toFixed(1)}" rx="${(3+rnd()*5).toFixed(1)}" ry="${(2+rnd()*4).toFixed(1)}" fill="#fff" opacity="${(.05+rnd()*.12).toFixed(2)}"/>`}).join("");
+ $("#gongBig").innerHTML=`<defs><radialGradient id="gF2" cx=".42" cy=".38"><stop offset="0" stop-color="#ffd6a0"/><stop offset=".45" stop-color="#d99a55"/><stop offset=".85" stop-color="#9a5d2a"/><stop offset="1" stop-color="#6e3d18"/></radialGradient><radialGradient id="gB2" cx=".38" cy=".32"><stop offset="0" stop-color="#fff0cf"/><stop offset=".5" stop-color="#e2a560"/><stop offset="1" stop-color="#8a5220"/></radialGradient></defs><g id="gongBigG" style="transform-box:fill-box;transform-origin:50% 0"><circle cx="200" cy="200" r="190" fill="#4a250a"/><circle cx="200" cy="200" r="182" fill="url(#gF2)"/>${rings}${ham}<circle cx="200" cy="200" r="40" fill="url(#gB2)"/><circle cx="200" cy="200" r="190" fill="none" stroke="#ffe2b8" stroke-width="2" opacity=".6"/></g><g id="ripples"></g>`}
+function gongUI(){if(!$("#gongBig").innerHTML)gongSVG();$("#planets").innerHTML=Object.entries(PLANETS).map(([k,v])=>`<button class="chip" data-planet="${k}" aria-pressed="${planet===k}">${v[0]}</button>`).join("");$("#planetTxt").textContent=`${PLANETS[planet][1]} Hz · ${PLANETS[planet][2]}`;
+ $("#washMins").innerHTML=[5,10,20].map(m=>`<button class="chip" data-wash="${m}" aria-pressed="${washMin===m}">${m} min</button>`).join("")}
+function ripple(x,y){const g=$("#ripples");if(!g)return;const c=document.createElementNS("http://www.w3.org/2000/svg","circle");c.setAttribute("cx",x);c.setAttribute("cy",y);c.setAttribute("r",6);c.setAttribute("fill","none");c.setAttribute("stroke","#fff2d8");c.setAttribute("stroke-width","3");g.appendChild(c);
+ if(RM){setTimeout(()=>c.remove(),300);return}let r=6,o=1;const step=()=>{r+=4;o-=.03;c.setAttribute("r",r);c.setAttribute("opacity",Math.max(o,0));if(o>0)requestAnimationFrame(step);else c.remove()};requestAnimationFrame(step)}
+function bigStrike(x,y,quiet){const d=Math.min(1,Math.hypot(x-200,y-200)/182);gongStrike(PLANETS[planet][1]/2,quiet?.35+Math.random()*.3:.95-d*.35,d);ripple(x,y);const g=$("#gongBigG");if(g){g.classList.remove("shake");void g.getBBox();g.classList.add("shake")}bump("gongs")}
+$("#gongBig").addEventListener("click",e=>{A();const r=e.currentTarget.getBoundingClientRect();bigStrike((e.clientX-r.left)/r.width*400,(e.clientY-r.top)/r.height*400)});
+$("#gongBig").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();bigStrike(200,200)}});
+function washStop(done){clearTimeout(washT);washT=null;$("#washGo").textContent="Begin gong wash";if(done){[0,2500,5000].forEach(d=>setTimeout(()=>bigStrike(200,200,true),d));speak("The gong wash is complete. Stay here as long as you like.")}}
+function washGo(){if(washT){washStop(false);return}washEnd=Date.now()+washMin*60000;const start=Date.now();$("#washGo").textContent="End gong wash";speak("Welcome to the gong bath. Lie back and let the waves carry you.");
+ const next=()=>{const left=washEnd-Date.now();if(left<=0){bump("minutes",washMin);washStop(true);return}const p=(Date.now()-start)/(washMin*60000),swell=Math.sin(Math.PI*p);const a=Math.random()*6.283,r=40+Math.random()*130*(.5+swell*.5);bigStrike(200+Math.cos(a)*r,200+Math.sin(a)*r,swell<.5);washT=setTimeout(next,(5200-swell*2600)*(.7+Math.random()*.6))};washT=setTimeout(next,2500)}
+$("#washGo").onclick=washGo;
+/* tuning forks */
+const SPOT={crown:[150,40],third:[150,64],throat:[150,108],heart:[150,156],solar:[150,192],sacral:[150,226],root:[150,258],feet:[150,420]};
+const FORKSETS={
+ ohm:["Ohm & Otto","Weighted forks you feel as much as hear. Grounding tools.",[["Otto 128",128,"A weighted fork placed on bones, joints and the soles of the feet. Felt as deep vibration.","feet"],["Ohm 136.1",136.1,"The tone of the Earth's year. Often placed on the sternum to calm and center.","heart"],["Low Ohm 68.05",68.05,"One octave below the Ohm. Very deep and grounding.","root"]]],
+ solfeggio:["Solfeggio","Nine tones from the Solfeggio scale, each with its own intention.",[["Foundation 174",174,"Ease and safety in the body.","feet"],["Restore 285",285,"Rest and repair.","root"],["Liberate 396",396,"Releasing fear and guilt.","root"],["Change 417",417,"Making space for something new.","sacral"],["Love 528",528,"Transformation and love.","solar"],["Connect 639",639,"Harmony in relationships.","heart"],["Express 741",741,"Clear expression and truth.","throat"],["Intuition 852",852,"Inner vision.","third"],["Unity 963",963,"Oneness and spirit.","crown"]]],
+ chakra:["Chakra","One fork for each of the seven energy centers.",CK.map(c=>[`${c.n} ${c.hz}`,c.hz,`${c.th}. ${c.af}`,c.k])],
+ planetary:["Planetary","Forks tuned to the cycles of the Sun, Moon and planets.",[["Sun 126.22",126.22,"Vitality and self.","solar"],["Moon 210.42",210.42,"Emotions and flow.","sacral"],["Earth day 194.18",194.18,"Daily rhythm and awake energy.","throat"],["Earth year 136.1",136.1,"Calm and centered.","heart"],["Venus 221.23",221.23,"Love and beauty.","heart"],["Mars 144.72",144.72,"Courage and strength.","root"],["Jupiter 183.58",183.58,"Growth and joy.","crown"],["Saturn 147.85",147.85,"Patience and structure.","root"]]],
+ intervals:["Harmonic pairs","Two forks struck together to form a pure interval.",[["Perfect fifth",[256,384],"C and G together. Open and balancing.","heart"],["Octave",[256,512],"The same note doubled. Complete and whole.","crown"],["Major third",[256,320],"Sweet and warm.","heart"],["Perfect fourth",[256,341.33],"Stable and calm.","solar"]]]
+};
+let forkSet="ohm",forkSel=null,sweepT=null;
+function forkTone(f,amp=.22,pan=0,dur=11){const c=A(),t=c.currentTime,o=c.createOscillator(),g=c.createGain(),p=c.createStereoPanner();o.frequency.value=f;p.pan.value=pan;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(amp,t+.01);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(p);p.connect(OUT);o.start(t);o.stop(t+dur+.1);
+ const o2=c.createOscillator(),g2=c.createGain();o2.frequency.value=f*6.27;g2.gain.setValueAtTime(.0001,t);g2.gain.exponentialRampToValueAtTime(amp*.25,t+.004);g2.gain.exponentialRampToValueAtTime(.0001,t+.35);o2.connect(g2);g2.connect(p);o2.start(t);o2.stop(t+.4);bump("forks");return{o,g,p}}
+const forkSVG=c=>`<svg viewBox="0 0 44 120"><g class="tines"><path d="M14 6 V64 Q14 78 22 78 Q30 78 30 64 V6" stroke="${c}" stroke-width="6" fill="none" stroke-linecap="round"/></g><path d="M22 78 V108" stroke="${c}" stroke-width="5" stroke-linecap="round"/><circle cx="22" cy="112" r="6" fill="${c}"/></svg>`;
+function forksUI(){$("#forkSets").innerHTML=Object.entries(FORKSETS).map(([k,v])=>`<button class="chip" data-fset="${k}" aria-pressed="${forkSet===k}">${v[0]}</button>`).join("");$("#forkSetTxt").textContent=FORKSETS[forkSet][1];
+ $("#forkRow").innerHTML=FORKSETS[forkSet][2].map((f,i)=>`<button class="fork" data-fork="${i}">${forkSVG(["#ffe2d8","#c9a7ff","#9fe3ec","#ff9fcf"][i%4])}<b>${Array.isArray(f[1])?f[1].map(x=>Math.round(x)).join("+"):f[1]}</b><span>${f[0].replace(/ [\d.]+$/,"")}</span></button>`).join("");bodyMap()}
+function bodyMap(spot){$("#bodyMap").innerHTML=`<defs><filter id="bmG" x="-2" y="-2" width="5" height="5"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ffd1ec"/></filter></defs><ellipse cx="150" cy="226" rx="122" ry="210" fill="none" stroke="#c9a7ff" stroke-dasharray="3 7" opacity=".6"/><ellipse cx="150" cy="226" rx="96" ry="188" fill="none" stroke="#9fe3ec" stroke-dasharray="2 9" opacity=".4"/>
+ <circle cx="150" cy="46" r="26" fill="#2a1c48" stroke="${G}"/><path d="M112 88 Q150 72 188 88 L196 220 Q192 250 176 262 L178 420 L160 420 L152 300 L148 300 L140 420 L122 420 L124 262 Q108 250 104 220Z M112 92 L86 210 L96 214 L120 120 M188 92 L214 210 L204 214 L180 120" fill="#2a1c48" stroke="${G}"/>
+ ${Object.entries(SPOT).map(([k,[x,y]])=>`<circle cx="${x}" cy="${y}" r="${spot===k?11:4}" fill="${spot===k?"#fff":G}" opacity="${spot===k?1:.5}" ${spot===k?'filter="url(#bmG)"':""}/>`).join("")}<circle id="sweepDot" r="7" fill="#ffd1ec" opacity="0" filter="url(#bmG)"/>`}
+function strikeFork(i){const f=FORKSETS[forkSet][2][i];forkSel=f;(Array.isArray(f[1])?f[1]:[f[1]]).forEach((hz,j,a)=>forkTone(hz,.2,a.length>1?(j?.5:-.5):0));
+ $$(".fork").forEach((b,k)=>{b.classList.toggle("on",k===i);b.classList.remove("ring")});const b=$$(".fork")[i];if(b&&!RM){b.classList.add("ring");setTimeout(()=>b.classList.remove("ring"),2200)}
+ $("#forkName").textContent=f[0]+(Array.isArray(f[1])?"":" Hz");$("#forkInfo").textContent=f[2];bodyMap(f[3])}
+function sweep(){if(sweepT){cancelAnimationFrame(sweepT);sweepT=null;$("#sweep").textContent="Biofield sweep";if(sweep.n){try{sweep.n.g.gain.cancelScheduledValues(0);sweep.n.g.gain.setTargetAtTime(.0001,AC.currentTime,.2);sweep.n.o.stop(AC.currentTime+1)}catch(e){}sweep.n=null}const d=$("#sweepDot");if(d)d.setAttribute("opacity",0);return}
+ const hz=forkSel&&!Array.isArray(forkSel[1])?forkSel[1]:136.1,c=A(),t=c.currentTime,o=c.createOscillator(),g=c.createGain(),p=c.createStereoPanner(),D=18;o.frequency.value=hz;g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(.16,t+1.2);g.gain.setValueAtTime(.16,t+D-2);g.gain.exponentialRampToValueAtTime(.0001,t+D);o.connect(g);g.connect(p);p.connect(OUT);o.start(t);o.stop(t+D+.1);sweep.n={o,g};bump("forks");
+ $("#sweep").textContent="Stop sweep";const t0=performance.now(),dot=$("#sweepDot");dot.setAttribute("opacity",1);
+ const step=now=>{const k=(now-t0)/(D*1000);if(k>=1){sweep.n=null;sweepT=1;sweep();return}const a=Math.PI+k*Math.PI*2,xx=150+Math.cos(a)*122,yy=226+Math.sin(a)*210;dot.setAttribute("cx",xx.toFixed(1));dot.setAttribute("cy",yy.toFixed(1));p.pan.value=Math.max(-1,Math.min(1,(xx-150)/122));sweepT=requestAnimationFrame(step)};sweepT=requestAnimationFrame(step)}
+$("#sweep").onclick=sweep;
+/* angel numbers */
+function anums(){$("#anums").innerHTML=Object.keys(ANUM).map(n=>`<button class="chip" data-anum="${n}">${n}</button>`).join("")}
+/* meditation room */
+let mins=5,mAmb=null,medT=null,medEnd=0,medDur=0;const RING=565.5;
+function medUI(){$("#mins").innerHTML=[1,3,5,10,20].map(m=>`<button class="chip" data-min="${m}" aria-pressed="${mins===m}">${m}</button>`).join("");$("#mAmb").innerHTML=AMBS.map(([l,v])=>`<button class="chip" data-mamb="${v||""}" aria-pressed="${mAmb===v}">${l}</button>`).join("");if(!medT)$("#tLeft").textContent=fmt(mins*60)}
+const fmt=s=>`${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,"0")}`;
+function medGo(){if(medT){medStop(false);return}medDur=mins*60;medEnd=Date.now()+medDur*1000;gong();if(mAmb)ambience(mAmb);$("#medGo").textContent="End early";medT=setInterval(medTick,250)}
+function medTick(){const left=Math.max(0,(medEnd-Date.now())/1000);$("#tLeft").textContent=fmt(Math.ceil(left));$("#ring").setAttribute("stroke-dashoffset",(RING*(1-left/medDur)).toFixed(1));if(left<=0)medStop(true)}
+function medStop(done){clearInterval(medT);medT=null;const used=medDur-Math.max(0,(medEnd-Date.now())/1000);if(used>10)bump("minutes",Math.round(used/6)/10);if(done){gong();setTimeout(gong,3500)}ambience(null);$("#medGo").textContent="Begin";$("#ring").setAttribute("stroke-dashoffset",0);$("#tLeft").textContent=done?"Done":fmt(mins*60)}
+/* chakra shrine */
+let shrineSel="heart",aligning=null;
+function shrine(){const fig=`<path d="M150 70 a26 30 0 1 1 0.1 0Z M110 150 Q150 120 190 150 L200 260 Q150 280 100 260Z M60 330 Q60 280 150 270 Q240 280 240 330 Q150 360 60 330Z" fill="#1c3527" stroke="${G}" stroke-width="1.5"/>`;
+ const ys={crown:40,third:78,throat:128,heart:180,solar:225,sacral:270,root:318};
+ $("#shrineSvg").innerHTML=`<defs><filter id="sg" x="-1" y="-1" width="3" height="3"><feGaussianBlur stdDeviation="6"/></filter></defs><line x1="150" y1="30" x2="150" y2="330" stroke="${G}" stroke-dasharray="2 6"/>${fig}`+CK.map(c=>`<g class="cnode ${shrineSel===c.k?"on":""}" data-sh="${c.k}" tabindex="0" role="button" aria-label="${c.n} chakra"><circle class="halo" cx="150" cy="${ys[c.k]}" r="22" fill="${c.c}" opacity="${shrineSel===c.k?.9:.25}" filter="url(#sg)"/><circle cx="150" cy="${ys[c.k]}" r="${shrineSel===c.k?13:9}" fill="${c.c}" stroke="${G2}"/><text x="${c.k==="root"||c.k==="sacral"?190:200}" y="${ys[c.k]+5}" fill="${G2}" font-size="13" font-family="'Cormorant Garamond',serif">${c.n}</text></g>`).join("")+`<text x="150" y="420" text-anchor="middle" fill="${G2}" font-size="12" opacity=".6">Tap a chakra</text>`;
+ const c=CK.find(x=>x.k===shrineSel);
+ $("#ckPanel").innerHTML=`<div class="small">${c.s} · ${c.hz} Hz</div><h3 style="color:${c.c};font-size:26px">${c.n} Chakra</h3><p><b>Where:</b> ${c.loc}<br><b>Element:</b> ${c.el}<br><b>Theme:</b> ${c.th}</p><p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:${c.c}">“${c.af}”</p><div class="opts"><button class="btn" data-ckplay="${c.k}">Play ${c.hz} Hz</button><button class="btn alt" id="align">${aligning?"Stop alignment":"Align all seven"}</button></div><p class="small" style="margin-top:12px">Alignment plays each tone from root to crown, eight seconds each.</p>`}
+function align(){if(aligning){clearTimeout(aligning);aligning=null;shrine();return}let i=0;const step=()=>{if(i>=CK.length){aligning=null;chime();shrine();return}shrineSel=CK[i].k;bowl(CK[i].hz,8,.25);i++;aligning=setTimeout(step,8000);shrine()};aligning=1;step()}
+/* lanterns */
+function sky(){const s=$("#sky"),L=store.get("lanterns",[]);s.innerHTML=Array.from({length:60},()=>`<i class="star" style="left:${Math.random()*100}%;top:${Math.random()*70}%;opacity:${.2+Math.random()*.7}"></i>`).join("")+L.map((l,i)=>`<div class="lan" title="${esc(l.t)}" style="left:${l.x}%;top:${l.y}%;animation-delay:-${i%6}s;transform:scale(${l.s})"></div>`).join("")+(L.length?"":`<p class="small" style="position:absolute;bottom:12px;left:0;right:0;text-align:center">The sky is waiting for your first wish.</p>`)}
+function release(e){e.preventDefault();const t=$("#lanTxt").value.trim();if(!t)return;const L=store.get("lanterns",[]),l={t,x:8+Math.random()*84,y:6+Math.random()*55,s:(.7+Math.random()*.6).toFixed(2)};L.push(l);store.set("lanterns",L.slice(-40));bump("lanterns");$("#lanTxt").value="";sky();const el=$$("#sky .lan").pop();if(el&&!RM){el.classList.add("rise");setTimeout(()=>el.classList.remove("rise"),5100)}chime();speak("Your wish is flying to the stars now.")}
+/* koans */
+function drawKoan(){const f=$("#fcard"),k=pick(KOANS);if(f.classList.contains("turned")){f.classList.remove("turned");setTimeout(()=>{$("#koanTxt").textContent=k;f.classList.add("turned")},RM?0:500)}else{$("#koanTxt").textContent=k;f.classList.add("turned")}bump("koans");if(!muted)bowl(528,3,.12);setTimeout(()=>speak(k),RM?0:700)}
+function journal(el){const J=store.get("journal",[]);$(el).innerHTML=J.length?J.slice().reverse().map(j=>`<div class="entry"><div class="small">${esc(j.d)} · ${esc(j.k)}</div><p style="margin:4px 0 0">${esc(j.t)}</p></div>`).join(""):`<div class="empty">Your reflections will appear here.</div>`}
+function saveRefl(){const t=$("#refl").value.trim();if(!t)return;const J=store.get("journal",[]);J.push({d:new Date().toLocaleDateString(),k:$("#koanTxt").textContent||"Free reflection",t});store.set("journal",J.slice(-50));$("#refl").value="";journal("#journal")}
+
+/* ================= views ================= */
+function freqs(){$("#freqs").innerHTML=Object.entries(F).map(([k,f])=>`<button class="freq" data-go="${k}"><div class="dot" style="background:var(--${k});color:var(--${k})"></div><h3>${f.name}</h3><div class="small">${f.word} · ${f.line}</div><div class="small" style="color:var(--gold2);margin-top:6px">${ROOMS.find(r=>r[0]===f.room)[1]} →</div></button>`).join("")}
+function picks(){const l=[S[2],S[3],S[0]];$("#picks").innerHTML=l.map(s=>`<a class="door" href="#sessions" style="border-radius:22px"><b>${esc(s.n)}</b><span>${esc(s.d)}</span></a>`).join("")}
+function list(){$("#list").innerHTML=S.map(card).join("")}
+const day=d=>d.toLocaleDateString("en-CA");
+function myzen(){
+ $("#stats").innerHTML=[["Minutes of stillness",Math.round(stats.minutes||0)],["Gong strikes",stats.gongs||0],["Forks struck",stats.forks||0],["Angel messages",stats.koans||0],["Wishes released",stats.lanterns||0],["Portals opened",stats.portals||0]].map(([l,v])=>`<div class="stat"><b>${v}</b><span class="small">${l}</span></div>`).join("");
+ $("#myFreq").innerHTML=myF?`<div class="result"><div class="small">Your frequency</div><h3>${F[myF].name}</h3><p>${F[myF].ritual}</p></div>`:`<div class="empty">No frequency yet. <a href="#home">Ask the Fairy to read yours.</a></div>`;
+ const log=store.get("log",{}),t=log[day(new Date())]||[];
+ $("#rituals").innerHTML=RIT.map((r,i)=>`<label class="ritual"><input type="checkbox" data-r="${i}" ${t.includes(i)?"checked":""}>${r}</label>`).join("");
+ let n=0;const d=new Date();if(t.length<3)d.setDate(d.getDate()-1);while((log[day(d)]||[]).length>=3){n++;d.setDate(d.getDate()-1)}
+ $("#rituals").insertAdjacentHTML("beforeend",`<p class="small" style="margin-top:10px">Streak: <b style="color:var(--gold2)">${n} day${n===1?"":"s"}</b></p>`);
+ journal("#myJournal");
+ const sv=S.filter(s=>saved.includes(s.id));$("#saved").innerHTML=sv.length?sv.map(card).join(""):`<div class="empty">Tap the heart on any of Victoria's sessions to save it here.</div>`}
+const VIEWS=["home","glade","sanctuary","gong","forks","sound","angels","chakras","breath","meditate","wishes","cosmos","sessions","my-magic"];
+const NAVOF={home:"home",glade:"glade",sanctuary:"sanctuary",gong:"sanctuary",forks:"sanctuary",sound:"sanctuary",angels:"sanctuary",chakras:"sanctuary",breath:"sanctuary",meditate:"sanctuary",wishes:"sanctuary",cosmos:"cosmos",sessions:"sessions","my-magic":"my-magic"};
+function route(){const h=location.hash.slice(1),v=VIEWS.includes(h)?h:"home";
+ VIEWS.forEach(k=>$("#v-"+k).hidden=k!==v);
+ $$("nav a").forEach(a=>a.hash==="#"+NAVOF[v]?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+ if(v!=="breath"&&bTimer)breathStop(false);if(chanting&&v!=="home"&&v!=="sound")stopChant();if(sweepT&&v!=="forks")sweep();hush();
+ if(v==="sessions")list();if(v==="my-magic")myzen();if(v==="home"){picks();requestAnimationFrame(size)}
+ if(v==="sound"){soundUI();requestAnimationFrame(soundLoop)}if(v==="breath")breathUI();
+ if(v==="glade")walkOpen();else walkClose();if(v==="gong")gongUI();else if(washT)washStop(false);if(v==="forks")forksUI();if(v==="angels")anums();if(v==="cosmos")cosmosOpen();
+ if(v==="meditate")medUI();if(v==="chakras")shrine();if(v==="wishes")sky();if(v==="angels")journal("#journal");
+ scrollTo(0,0)}
+
+/* ================= events ================= */
+const stage=$("#stage");
+stage.addEventListener("pointermove",e=>{
+ const ck=e.target.closest(".ck"),hs=e.target.closest("[data-hs]");
+ if(ck){const c=CK.find(x=>x.k===ck.dataset.ck);hoverPt={x:300,y:c.y,c:c.c};tune(c.c);tipShow(e,`<b>${c.n}</b> · ${c.s} · ${c.hz} Hz — click to open`);if(!muted&&AC&&Date.now()-lastHum>900){tone(c.hz,.9,.03);lastHum=Date.now()}}
+ else if(hs){hoverPt=null;tune();const[a,b]=HS[hs.dataset.hs];tipShow(e,`<b>${a}</b> — ${b}`)}
+ else{hoverPt=null;$("#tip").style.opacity=0;if(!$(".ck.on"))tune()}
+});
+stage.addEventListener("pointerleave",()=>{hoverPt=null;$("#tip").style.opacity=0;tune()});
+stage.addEventListener("click",e=>{
+ A();if(deep){wake();return}
+ const now=Date.now();clicks=clicks.filter(t=>now-t<2500);clicks.push(now);
+ const ck=e.target.closest(".ck");if(ck){chakraPortal(ck.dataset.ck);return}
+ const hs=e.target.closest("[data-hs]");
+ if(clicks.length>=7&&!busy){clicks=[];enlightenment();return}
+ if(hs)hsClick(hs.dataset.hs);else if(e.target.closest("#master")&&!busy&&mode!=="quiz")quote();
+ const p=svgPt(e);burst(p.x,p.y,null,10);
+});
+addEventListener("pointermove",e=>{
+ const now=Date.now(),dt=now-lastMove||16;lastMove=now;if(deep)wake();
+ if($("#v-home").hidden||busy)return;
+ const r=stage.getBoundingClientRect(),dx=(e.clientX-(r.left+r.width/2))/r.width,dy=(e.clientY-(r.top+r.height*.35))/r.height,cl=v=>Math.max(-1,Math.min(1,v));
+ const X=cl(dx),Y=cl(dy);
+ $("#back").setAttribute("transform",`translate(${(-X*10).toFixed(1)} ${(-Y*6).toFixed(1)})`);
+ $("#front").setAttribute("transform",`translate(${(X*6).toFixed(1)} ${(Y*3).toFixed(1)})`);
+ $("#head").setAttribute("transform",`rotate(${(X*4).toFixed(2)} 300 300) translate(${(X*3).toFixed(1)} ${(Y*2).toFixed(1)})`);
+ $$("#head .iris").forEach(g=>g.setAttribute("transform",`translate(${(X*4).toFixed(2)} ${(Y*2.4).toFixed(2)})`));
+ const sp=Math.hypot(e.movementX||0,e.movementY||0)/dt;
+ if(sp>3&&now-lastFast>20000&&mode==="menu"){lastFast=now;say("Slow down, sweet one. Magic moves at the speed of breath.",[["Breathe with me",meditate],["Bless me",quote]])}
+});
+setInterval(()=>{if(!$("#v-home").hidden&&!busy&&mode==="menu"&&Date.now()-lastMove>30000)enterDeep()},1000);
+document.addEventListener("click",e=>{
+ const h=e.target.closest("[data-save]");
+ if(h){const id=h.dataset.save;saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];store.set("saved",saved);$$(`[data-save="${id}"]`).forEach(b=>b.setAttribute("aria-pressed",saved.includes(id)));if(!$("#v-my-magic").hidden)myzen();return}
+ const c=e.target.closest("[data-f]");if(c){filt.f=c.dataset.f;list();return}
+ const g=e.target.closest("[data-go]");if(g){location.hash=F[g.dataset.go].room;return}
+ const n=e.target.closest("[data-note]");if(n){note=CK.find(x=>x.k===n.dataset.note);soundUI();strike();return}
+ const om=e.target.closest("[data-om]");if(om){chant(om.dataset.om);return}
+ const bt=e.target.closest("[data-beat]");if(bt){beatSel=+bt.dataset.beat;binaural(beatSel);soundUI();return}
+ const am=e.target.closest("[data-amb]");if(am){ambSel=am.dataset.amb||null;ambience(ambSel);soundUI();return}
+ const pt=e.target.closest("[data-pat]");if(pt){if(bTimer)breathStop(false);pat=pt.dataset.pat;breathUI();return}
+ const pl=e.target.closest("[data-planet]");if(pl){planet=pl.dataset.planet;gongUI();bigStrike(200,200);return}
+ const wm=e.target.closest("[data-wash]");if(wm){washMin=+wm.dataset.wash;gongUI();return}
+ const fs=e.target.closest("[data-fset]");if(fs){forkSet=fs.dataset.fset;forkSel=null;forksUI();return}
+ const fk=e.target.closest("[data-fork]");if(fk){strikeFork(+fk.dataset.fork);return}
+ const an=e.target.closest("[data-anum]");if(an){$("#anumTxt").innerHTML=`<b style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold2)">${an.dataset.anum}</b> · ${ANUM[an.dataset.anum]}`;speak(ANUM[an.dataset.anum]);if(!muted)bowl(200+(+an.dataset.anum)%700,2.5,.08);return}
+ const mn=e.target.closest("[data-min]");if(mn&&!medT){mins=+mn.dataset.min;medUI();return}
+ const ma=e.target.closest("[data-mamb]");if(ma){mAmb=ma.dataset.mamb||null;if(medT)ambience(mAmb);medUI();return}
+ const sh=e.target.closest("[data-sh]");if(sh){shrineSel=sh.dataset.sh;shrine();bowl(CK.find(x=>x.k===shrineSel).hz,5,.2);return}
+ const cp=e.target.closest("[data-ckplay]");if(cp){bowl(CK.find(x=>x.k===cp.dataset.ckplay).hz,8,.28);return}
+ if(e.target.id==="align"){align();return}
+});
+document.addEventListener("keydown",e=>{
+ if(e.key==="Escape"&&!$("#portal").hidden)closePortal();
+ if((e.key==="Enter"||e.key===" ")&&e.target.closest("[data-sh]")){e.preventDefault();e.target.closest("[data-sh]").dispatchEvent(new MouseEvent("click",{bubbles:true}))}
+ if((e.key==="Enter"||e.key===" ")&&e.target.id==="bowl"){e.preventDefault();strike()}
+});
+document.addEventListener("change",e=>{if(e.target.dataset.r!==undefined){const log=store.get("log",{}),k=day(new Date()),i=+e.target.dataset.r;let t=log[k]||[];t=e.target.checked?[...new Set([...t,i])]:t.filter(x=>x!==i);log[k]=t;store.set("log",log);myzen()}});
+$("#portal").addEventListener("click",e=>{if(e.target.id==="portal")closePortal()});
+$("#pClose").onclick=closePortal;
+$("#bowl").onclick=strike;
+$("#stopAll").onclick=()=>{stopChant();ambience(null);binaural(0);beatSel=0;ambSel=null;soundUI()};
+$("#vol").oninput=e=>{vol=+e.target.value;if(OUT&&!muted)OUT.gain.value=vol};
+$("#sndBtn").onclick=()=>{A();setMute(!muted)};
+$("#visionBtn").onclick=e=>{const on=stage.classList.toggle("vision");e.target.setAttribute("aria-pressed",on);if(on){CK.forEach((c,i)=>setTimeout(()=>burst(300,c.y,c.c,12),i*120));say("Chakra sight is open. Seven little lights, crown to root. Touch one to step through its portal.",[["Bless me",quote],["Back",()=>menu()]])}};
+$("#breathGo").onclick=breathGo;$("#medGo").onclick=medGo;$("#drawKoan").onclick=drawKoan;$("#saveRefl").onclick=saveRefl;$("#lanForm").onsubmit=release;
+
+
+/* ================= voice + moving mouth ================= */
+let voiceOn=store.get("voice",true),speakUntil=0,mouthO=0,mouthR=0,pulse=0,mouthRAF=0,VM=new Set(),VB={},vSrc=null,vAN=null,chantMouth=null;
+const vnorm=t=>String(t).replace(/\s+/g," ").trim(),vkey=t=>{let h=5381;const x=vnorm(t);for(let i=0;i<x.length;i++)h=((h<<5)+h+x.charCodeAt(i))>>>0;return h.toString(16)};
+fetch("voice/manifest.json").then(r=>r.ok?r.json():[]).then(a=>{VM=new Set(a)}).catch(()=>{});
+const GREETS=["The stars are out, and so is your light.","Good morning, sweet soul. The flowers just woke up too.","Good afternoon, darling. The sun is warming the sanctuary.","Good evening, beautiful one. The moon is rising.","The night is soft and quiet. A perfect time to listen."];
+const STATIC_LINES=["Chakra sight is open. Seven little lights, crown to root. Touch one to step through its portal.","Seven touches… you've lit up all seven chakras! Rainbow magic.","Breathe with me, love. Four slow rounds. Follow my light.","Slow down, sweet one. Magic moves at the speed of breath.","Oh! You're back. I was dancing with the moon.","Every breath counts, darling. What next?","Beautiful. Feel that sparkle? That is you, coming home.","May it bring you home to yourself. What next?","Breathe in","Hold","Breathe out","Chant with me. Choose your Om.","The vibration remains, even in silence. What next?","The sacred gong… let it ring through every cell.","Welcome to the gong bath. Lie back and let the waves carry you.","The gong wash is complete. Stay here as long as you like.","Your wish is flying to the stars now."];
+window.__fyzLines=()=>{const L=[...STATIC_LINES,...GREETS.map(g=>g+" What is your heart calling for?"),...QUOTES.map(q=>q[0]),...Q.map(q=>q.q),...KOANS,...CK.map(c=>c.af),...Object.values(F).flatMap(f=>[`I can feel it now. Your frequency is ${f.name}. ${f.line}`,f.ritual])];return [...new Set(L.map(vnorm))].map(t=>[vkey(t),t])};
+function pickVoice(){const vs=speechSynthesis.getVoices();return vs.find(v=>/^en/i.test(v.lang)&&/Natural|Neural|Enhanced|Premium/i.test(v.name)&&/Daniel|Guy|Ryan|Arthur|Oliver|Thomas|Christopher|Andrew|Brian|Male/i.test(v.name))||vs.find(v=>/^en/i.test(v.lang)&&/Daniel|Arthur|Rishi|Aaron|Google UK English Male/i.test(v.name))||vs.find(v=>/^en-GB/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang))}
+function hush(){try{if(vSrc){vSrc.onended=null;vSrc.stop()}}catch(e){}vSrc=null;try{"speechSynthesis" in window&&speechSynthesis.cancel()}catch(e){}}
+async function clip(k){if(VB[k])return VB[k];const r=await fetch(`voice/${k}.mp3`);if(!r.ok)throw 0;const ab=await r.arrayBuffer();return VB[k]=await A().decodeAudioData(ab)}
+function speak(t){if(!t)return;hush();const k=vkey(t),tok={};speak.tok=tok;
+ const fake=()=>{speakUntil=performance.now()+Math.min(14000,400+vnorm(t).length*62);startMouth()};
+ if(voiceOn&&!muted&&VM.has(k)&&AC){(AC.state==="running"?Promise.resolve():AC.resume()).then(()=>clip(k)).then(buf=>{if(AC.state!=="running"){fake();return}if(speak.tok!==tok)return;const src=AC.createBufferSource();src.buffer=buf;if(!vAN){vAN=AC.createAnalyser();vAN.fftSize=512}const g=AC.createGain();g.gain.value=1.15;src.connect(g);g.connect(vAN);g.connect(OUT);src.onended=()=>{if(vSrc===src){vSrc=null;speakUntil=0}};vSrc=src;src.start();speakUntil=performance.now()+buf.duration*1000+100;startMouth()}).catch(()=>{if(speak.tok===tok)tts(t,fake)});return}
+ if(VM.has(k)||!voiceOn||muted){fake();return}
+ tts(t,fake)}
+function tts(t,fake){fake();try{if(voiceOn&&!muted&&"speechSynthesis" in window){const u=new SpeechSynthesisUtterance(vnorm(t).replace(/…/g,"... "));u.rate=.8;u.pitch=.55;u.volume=Math.min(1,vol+.3);const v=pickVoice();if(v)u.voice=v;u.onboundary=()=>{pulse=1};u.onend=()=>{speakUntil=performance.now()+80};speechSynthesis.speak(u)}}catch(e){}}
+function startMouth(){if(!mouthRAF)mouthRAF=requestAnimationFrame(mouthLoop)}
+const td=new Uint8Array(512);
+function mouthLoop(now){let target=0,round=0;
+ if(chantMouth){const c=chantMouth();target=c[0];round=c[1]}
+ else if(vSrc&&vAN){vAN.getByteTimeDomainData(td);let s2=0;for(let i=0;i<td.length;i++){const v=(td[i]-128)/128;s2+=v*v}target=Math.min(1,Math.sqrt(s2/td.length)*7)}
+ else if(now<speakUntil){target=.22+.78*Math.abs(Math.sin(now/68))*(.55+.45*Math.sin(now/210))+pulse*.35;pulse*=.86}
+ mouthO+=(target-mouthO)*.45;mouthR+=(round-mouthR)*.3;const o=Math.min(1,mouthO);
+ const mi=$("#mouthIn"),lp=$("#lip"),bd=$("#beard"),th=$("#teeth");
+ if(mi){mi.setAttribute("ry",(.4+o*5).toFixed(2));mi.setAttribute("cy",(MY+o*1.8).toFixed(2));mi.setAttribute("rx",(7-o*1-mouthR*3).toFixed(2));lp.setAttribute("d",`M${293+mouthR*2} ${(MY+2+o*6).toFixed(1)} Q300 ${(MY+6+o*7).toFixed(1)} ${307-mouthR*2} ${(MY+2+o*6).toFixed(1)}`);th.setAttribute("opacity",o>.35&&mouthR<.5?.8:0)}
+ if(chantMouth||vSrc||now<speakUntil||mouthO>.01)mouthRAF=requestAnimationFrame(mouthLoop);else{mouthRAF=0;mouthO=0}}
+function voiceUI(){const b=$("#voiceBtn");b.setAttribute("aria-pressed",voiceOn);b.textContent=voiceOn?"Voice on":"Voice off"}
+$("#voiceBtn").onclick=()=>{A();voiceOn=!voiceOn;store.set("voice",voiceOn);voiceUI();if(!voiceOn)hush();else speak($("#say").dataset.spoken||$("#say").textContent)};
+
+/* ================= Om chants ================= */
+const FORM={a:[[730,1],[1090,.5],[2440,.22]],o:[[570,1],[840,.45],[2410,.18]],u:[[320,1],[870,.3],[2240,.12]],m:[[250,1],[1000,.08],[2200,.03]],i:[[300,1],[2200,.35],[3000,.15]],e:[[480,1],[1800,.4],[2500,.18]],n:[[260,1],[1500,.06],[2500,.03]]};
+const MOUTH={a:[1,0],o:[.6,.8],u:[.35,1],m:[0,0],i:[.4,0],e:[.55,0],n:[.05,0],x:[0,0],h:[.5,.3]};
+let RV=null;function reverb(){if(RV)return RV;const c=A(),len=c.sampleRate*4.5,ir=c.createBuffer(2,len,c.sampleRate);for(let ch=0;ch<2;ch++){const d=ir.getChannelData(ch);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3.2)}const cv2=c.createConvolver();cv2.buffer=ir;const w=c.createGain();w.gain.value=.55;cv2.connect(w);w.connect(OUT);return RV=cv2}
+let chantNodes=[],chantTimers=[],chantSched=[];
+function chantVoice(f,t0,segs,o={}){const c=A(),rv=reverb(),dry=c.createGain(),env=c.createGain(),mix=c.createGain(),nasal=c.createBiquadFilter();dry.gain.value=.8;nasal.type="lowpass";nasal.frequency.value=4800;mix.gain.value=.5;
+ const total=segs.reduce((s,x)=>s+x[1],0),T1=t0+total;
+ const lfo=c.createOscillator(),lg=c.createGain();lfo.frequency.value=4.8+Math.random()*.6;lg.gain.setValueAtTime(0,t0);lg.gain.linearRampToValueAtTime(f*.007,t0+1.6);lfo.connect(lg);lfo.start(t0);lfo.stop(T1+1.5);chantNodes.push(lfo);
+ const voices=(o.choir?[-9,-3,4,10]:[-4,4]).map(d=>[f,d,o.choir?.22:.35]).concat([[f/2,0,o.deep?.45:.18]]);
+ voices.forEach(([fr,dt,gn])=>{const os=c.createOscillator(),g=c.createGain();os.type="sawtooth";os.frequency.value=fr;os.detune.value=dt;g.gain.value=gn;lg.connect(os.frequency);os.connect(g);g.connect(mix);os.start(t0);os.stop(T1+1.5);chantNodes.push(os)});
+ const sum=c.createGain();sum.gain.value=1;
+ const fs=[0,1,2].map(i=>{const bp=c.createBiquadFilter(),g=c.createGain();bp.type="bandpass";bp.Q.value=i?12:6;mix.connect(bp);bp.connect(g);g.connect(sum);return[bp,g]});
+ if(o.throat){const bp=c.createBiquadFilter(),g=c.createGain();bp.type="bandpass";bp.Q.value=40;g.gain.value=2.2;bp.frequency.setValueAtTime(f*12,t0);for(let k=1;k<8;k++)bp.frequency.linearRampToValueAtTime(f*(10+((k*7)%7)),t0+k*total/8);mix.connect(bp);bp.connect(g);g.connect(sum)}
+ sum.connect(nasal);nasal.connect(env);env.connect(dry);dry.connect(OUT);env.connect(rv);
+ env.gain.setValueAtTime(.0001,t0);env.gain.exponentialRampToValueAtTime(.32*(o.gain||1),t0+.35);
+ let t=t0;segs.forEach(([v,d])=>{const F2=FORM[v==="x"||v==="h"?"a":v];
+  fs.forEach(([bp,g],i)=>{bp.frequency.linearRampToValueAtTime(F2[i][0]*(o.deep?.88:1),t+.12);g.gain.linearRampToValueAtTime(F2[i][1],t+.12)});
+  nasal.frequency.linearRampToValueAtTime(v==="m"||v==="n"?420:4800,t+.12);
+  if(v==="x"){env.gain.linearRampToValueAtTime(.02,t+.04);env.gain.linearRampToValueAtTime(.3*(o.gain||1),t+d)}
+  if(v==="h"){const n=noiseSrc("white"),nf=c.createBiquadFilter(),ng=c.createGain();nf.type="bandpass";nf.frequency.value=1800;ng.gain.setValueAtTime(.0001,t);ng.gain.exponentialRampToValueAtTime(.08,t+.03);ng.gain.exponentialRampToValueAtTime(.0001,t+d);n.connect(nf);nf.connect(ng);ng.connect(OUT);n.start(t);n.stop(t+d+.05)}
+  chantSched.push([t,v]);t+=d});
+ env.gain.setValueAtTime(.3*(o.gain||1),T1-.05);env.gain.exponentialRampToValueAtTime(.0001,T1+1.3);chantSched.push([T1,"x"]);return T1+1.3}
+const AUM=d=>[["a",d*.3],["u",d*.25],["m",d*.45]];
+const MANI=(r)=>[["o",.9*r],["m",.7*r],["x",.12],["a",.55*r],["n",.12],["i",.55*r],["x",.1],["a",.55*r],["x",.06],["m",.12],["e",.55*r],["h",.12],["u",.6*r],["m",1.1*r],["x",.5]];
+const CHANTS={
+ sacred:["Sacred Om","One long Om at 136.1 Hz, the tone of the Earth's year.",c=>chantVoice(136.1,c+.2,AUM(9))],
+ three:["Three Oms","Three Oms with a breath between each.",c=>{let t=c+.2;for(let i=0;i<3;i++)t=chantVoice(136.1,t,AUM(6))+.6;return t}],
+ monk:["Deep Monk Om","A low throat-chant with whistling overtones, like the Himalayan monasteries.",c=>chantVoice(66,c+.2,AUM(11),{deep:1,throat:1,gain:1.2})],
+ sangha:["Sangha Om","A temple full of voices chanting together.",c=>chantVoice(110,c+.2,AUM(9),{choir:1,gain:1.1})],
+ mani:["Om Mani Padme Hum","The six-syllable mantra of compassion, three times.",c=>{let t=c+.2;for(let i=0;i<3;i++)t=chantVoice(110,t,MANI(1),{choir:1})-1;return t+1}],
+ ascent:["Chakra Om ascent","Seven Oms rising from root to crown. Each chakra lights up.",c=>{let t=c+.2;CK.forEach((k,i)=>{const s=t;chantTimers.push(setTimeout(()=>{$$(".ck").forEach(e=>e.classList.toggle("on",e.dataset.ck===k.k));tune(k.c);burst(300,k.y,k.c,22);if(!muted)bowl(k.hz,4,.07)},(s-c)*1000));t=chantVoice(k.hz/4,t,AUM(4.6),{gain:.9})-.6});return t+.6}]
+};
+let chanting=false;
+function chant(id){if(chanting)stopChant();const c=A();hush();chanting=true;busy=true;mode="med";setLids(1);$("#stage").classList.add("deep");$("#aura").style.transform="scale(1.2)";chantSched=[];
+ const ch=CHANTS[id],end=ch[2](c.currentTime);
+ say(`${ch[0]}… ${ch[1]}`,[["Stop",()=>{stopChant();menu("The vibration remains, even in silence. What next?")}]],"",true);
+ chantMouth=()=>{const now=AC.currentTime;let v="x";for(const[tt,vv]of chantSched){if(tt<=now)v=vv;else break}const m=MOUTH[v]||[0,0];return[m[0]*(.85+.15*Math.sin(now*9)),m[1]]};startMouth();
+ chantTimers.push(setTimeout(()=>{stopChant();burst();menu("The vibration remains, even in silence. What next?")},(end-c.currentTime)*1000))}
+function stopChant(){chantTimers.forEach(clearTimeout);chantTimers=[];chantNodes.forEach(n=>{try{n.stop()}catch(e){}});chantNodes=[];chantSched=[];chantMouth=null;chanting=false;busy=false;setLids(lidBase);$("#stage").classList.remove("deep");$("#aura").style.transform="";$$(".ck.on").forEach(e=>e.classList.remove("on"));tune()}
+function chantMenu(){say("Chant with me. Choose your Om.",Object.entries(CHANTS).map(([k,v])=>[v[0],()=>chant(k)]).concat([["Back",()=>menu()]]))}
+
+/* ================= 3D temple walk ================= */
+const WALKCOL={gong:"#f0b48a",forks:"#ffe2d8",sound:"#9fe3ec",angels:"#ffd1ec",chakras:"#b45ad6",breath:"#8fd68f",meditate:"#c9a7ff",wishes:"#ff9fcf",cosmos:"#6a4fd0"};
+let temple=null,walkLoading=false,wsubT=0;
+function masterTexture(){const sc=$("#scene").cloneNode(true);["#back","#mid"].forEach(q=>sc.querySelector(q)?.remove());sc.querySelectorAll(".ck").forEach(e=>e.remove());
+ ["#front","#head","#beard"].forEach(q=>sc.querySelector(q)?.removeAttribute("transform"));sc.querySelectorAll(".iris").forEach(g=>g.removeAttribute("transform"));
+ sc.setAttribute("xmlns","http://www.w3.org/2000/svg");sc.setAttribute("width","600");sc.setAttribute("height","640");return new XMLSerializer().serializeToString(sc).replace(/var\(--tune\)/g,G2)}
+async function walkOpen(){if(temple){temple.start();return}if(walkLoading)return;walkLoading=true;
+ try{const mod=await import("./walk.js");temple=mod.createTemple({el:$("#walkBox"),rooms:ROOMS.map(([id,name])=>({id,name,color:WALKCOL[id]})),masterSVG:masterTexture(),onEnter:walkEnter,reducedMotion:RM});$("#walkLoad").hidden=true;if(!$("#v-glade").hidden)temple.start()}
+ catch(e){console.warn(e);$("#walkLoad").textContent="The 3D temple needs WebGL. Try a recent browser on your computer or phone."}walkLoading=false}
+function walkClose(){if(temple)temple.stop()}
+function walkEnter(id){if(id==="master"){const q=pick(QUOTES),ws=$("#wsub");ws.hidden=false;ws.innerHTML=`<div class="who">The Fairy whispers</div><p style="margin:6px 0 4px">${esc(q[0])}</p><div class="small">— ${esc(q[1])}</div>`;speak(q[0]);burst();clearTimeout(wsubT);wsubT=setTimeout(()=>ws.hidden=true,10000);return}location.hash=id}
+$("#enterBtn").onclick=()=>temple&&temple.enterNear();
+
+/* ================= cosmos: astrology + human design ================= */
+const CITIES=[["Austin, TX",30.2672,-97.7431,"America/Chicago"],["Dallas, TX",32.7767,-96.797,"America/Chicago"],["Houston, TX",29.7604,-95.3698,"America/Chicago"],["New York, NY",40.7128,-74.006,"America/New_York"],["Miami, FL",25.7617,-80.1918,"America/New_York"],["Chicago, IL",41.8781,-87.6298,"America/Chicago"],["Denver, CO",39.7392,-104.9903,"America/Denver"],["Los Angeles, CA",34.0522,-118.2437,"America/Los_Angeles"],["San Francisco, CA",37.7749,-122.4194,"America/Los_Angeles"],["Seattle, WA",47.6062,-122.3321,"America/Los_Angeles"],["Toronto",43.6532,-79.3832,"America/Toronto"],["Vancouver",49.2827,-123.1207,"America/Vancouver"],["Mexico City",19.4326,-99.1332,"America/Mexico_City"],["Tulum",20.2114,-87.4654,"America/Cancun"],["São Paulo",-23.5505,-46.6333,"America/Sao_Paulo"],["Buenos Aires",-34.6037,-58.3816,"America/Argentina/Buenos_Aires"],["London",51.5074,-.1278,"Europe/London"],["Paris",48.8566,2.3522,"Europe/Paris"],["Berlin",52.52,13.405,"Europe/Berlin"],["Amsterdam",52.3676,4.9041,"Europe/Amsterdam"],["Budapest",47.4979,19.0402,"Europe/Budapest"],["Barcelona",41.3874,2.1686,"Europe/Madrid"],["Lisbon",38.7223,-9.1393,"Europe/Lisbon"],["Ibiza",38.9067,1.4206,"Europe/Madrid"],["Tel Aviv",32.0853,34.7818,"Asia/Jerusalem"],["Dubai",25.2048,55.2708,"Asia/Dubai"],["Mumbai",19.076,72.8777,"Asia/Kolkata"],["Bangkok",13.7563,100.5018,"Asia/Bangkok"],["Bali (Denpasar)",-8.6705,115.2126,"Asia/Makassar"],["Tokyo",35.6762,139.6503,"Asia/Tokyo"],["Sydney",-33.8688,151.2093,"Australia/Sydney"]];
+let CM=null,cosmosInit=false;
+async function loadCosmos(){if(CM)return CM;if(!window.Astronomy)await new Promise((res,rej)=>{const sc=document.createElement("script");sc.src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js";sc.onload=res;sc.onerror=rej;document.head.appendChild(sc)});CM=await import("./cosmos.js");return CM}
+function setPlace(name,lat,lon,tz){$("#bPlace").value=name;$("#bLat").value=(+lat).toFixed(4);$("#bLon").value=(+lon).toFixed(4);$("#bTz").value=tz;$("#placeRes").innerHTML=""}
+function cosmosOpen(){if(cosmosInit)return;cosmosInit=true;
+ $("#cityList").innerHTML=CITIES.map(c=>`<option value="${c[0]}">`).join("");
+ try{$("#tzList").innerHTML=Intl.supportedValuesOf("timeZone").map(z=>`<option value="${z}">`).join("")}catch(e){}
+ const b=store.get("birth",null);if(b){$("#bName").value=b.name||"";$("#bDate").value=b.date;$("#bTime").value=b.time||"12:00";$("#bNoTime").checked=!!b.noTime;setPlace(b.place||"",b.lat,b.lon,b.tz);readStars()}
+ loadCosmos().catch(()=>{$("#cosmosMsg").textContent="The star library could not load. Check your connection."})}
+$("#bPlace").addEventListener("input",e=>{const c=CITIES.find(c=>c[0]===e.target.value);if(c)setPlace(...c)});
+$("#findPlace").onclick=async()=>{const q=$("#bPlace").value.trim();if(!q)return;const c=CITIES.find(c=>c[0].toLowerCase().startsWith(q.toLowerCase()));$("#placeRes").innerHTML=`<span class="small">Searching…</span>`;
+ try{const r=await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(q)}&count=6&language=en&format=json`);const j=await r.json();const L=(j.results||[]);
+  $("#placeRes").innerHTML=L.length?L.map((p,i)=>`<button type="button" class="chip" data-place="${i}">${esc([p.name,p.admin1,p.country].filter(Boolean).join(", "))}</button>`).join(""):`<span class="small">No match. Try a bigger nearby city, or type coordinates below.</span>`;
+  $("#placeRes").onclick=e=>{const bt=e.target.closest("[data-place]");if(bt){const p=L[+bt.dataset.place];setPlace([p.name,p.admin1,p.country].filter(Boolean).join(", "),p.latitude,p.longitude,p.timezone)}}}
+ catch(e){if(c){setPlace(...c)}else $("#placeRes").innerHTML=`<span class="small">Place search isn't available in this preview. Pick a city from the list, or enter latitude, longitude and time zone below.</span>`}};
+$("#birthForm").onsubmit=e=>{e.preventDefault();store.set("birth",{name:$("#bName").value.trim(),date:$("#bDate").value,time:$("#bTime").value,noTime:$("#bNoTime").checked,place:$("#bPlace").value,lat:$("#bLat").value,lon:$("#bLon").value,tz:$("#bTz").value.trim()});readStars(true)};
+document.addEventListener("click",e=>{const t=e.target.closest("[data-ctab]");if(!t)return;$$("[data-ctab]").forEach(b=>b.setAttribute("aria-pressed",b===t));$("#astroOut").hidden=t.dataset.ctab!=="astro";$("#hdOut").hidden=t.dataset.ctab!=="hd"});
+async function readStars(talk){const m=$("#cosmosMsg");m.textContent="Reading the sky…";
+ try{const C=await loadCosmos();const b=store.get("birth");if(!b||!b.date)throw new Error("Add your birth date.");
+  const[y,mo,d]=b.date.split("-").map(Number),[h,mi]=(b.noTime?"12:00":b.time||"12:00").split(":").map(Number),lat=parseFloat(b.lat),lon=parseFloat(b.lon);
+  if(!(Math.abs(lat)<=90&&Math.abs(lon)<=180))throw new Error("Check the latitude and longitude.");
+  try{new Intl.DateTimeFormat("en-US",{timeZone:b.tz})}catch(x){throw new Error("Time zone not recognised. Try one like America/Chicago.")}
+  const utc=C.zonedToUTC(y,mo,d,h,mi,b.tz),pos=C.positions(utc),ang=b.noTime?null:C.angles(utc,lat,lon),hd=C.humanDesign(utc);
+  renderAstro(C,pos,ang);renderHD(C,hd);
+  const S_=k=>C.SIGNS[C.signOf(pos[k])],nm=b.name?b.name+", ":"";
+  const txt=`${nm}your Sun is in ${S_("sun")}, ${C.SIGN_WORDS[C.signOf(pos.sun)]}. Your Moon is in ${S_("moon")}${ang?`, and ${C.SIGNS[C.signOf(ang.asc)]} is rising`:""}. In Human Design you are a ${hd.type} with ${hd.authority} authority and a ${hd.profile} profile. Your strategy: ${hd.strategy.toLowerCase()}.`;
+  $("#reading").textContent=txt+(ang?"":" Add a birth time to reveal your rising sign and houses.");$("#cosmosOut").hidden=false;m.textContent="";if(talk){speak(txt);$("#cosmosOut").scrollIntoView({behavior:RM?"auto":"smooth"})}}
+ catch(err){m.textContent=err.message||"Something went wrong."}}
+function renderAstro(C,pos,ang){const asc=ang?ang.asc:Math.floor(pos.sun/30)*30,P=(l,r)=>{const t=(180+l-asc)*Math.PI/180;return[300+r*Math.cos(t),300-r*Math.sin(t)]},f=v=>v.toFixed(1);
+ const EL=["#e5483f","#4fb487","#8fb8ff","#6a4fd0"],ELB=["#3a1612","#16281c","#17263a","#1d1838"];
+ let o=`<svg viewBox="0 0 600 600" role="img" aria-label="Natal chart wheel">`;
+ for(let i=0;i<12;i++){const a0=i*30,a1=a0+30,[x0,y0]=P(a0,290),[x1,y1]=P(a1,290),[x2,y2]=P(a1,245),[x3,y3]=P(a0,245);o+=`<path d="M${f(x0)} ${f(y0)} A290 290 0 0 0 ${f(x1)} ${f(y1)} L${f(x2)} ${f(y2)} A245 245 0 0 1 ${f(x3)} ${f(y3)}Z" fill="${ELB[i%4]}" stroke="${G}" stroke-width="1"/>`;const[gx,gy]=P(a0+15,267);o+=`<text x="${f(gx)}" y="${f(gy)}" text-anchor="middle" dominant-baseline="central" font-size="22" fill="${EL[i%4]}" class="gl">${C.SIGN_GLYPH[i]}</text>`}
+ for(let d=0;d<360;d+=5){const[a,b2]=P(d,245),[c,e]=P(d,d%30?238:230);o+=`<line x1="${f(a)}" y1="${f(b2)}" x2="${f(c)}" y2="${f(e)}" stroke="${G}" opacity=".6"/>`}
+ o+=`<circle cx="300" cy="300" r="245" fill="none" stroke="${G}"/><circle cx="300" cy="300" r="150" fill="#0d1913" stroke="${G}" opacity=".9"/>`;
+ const s0=C.signOf(asc);for(let hN=0;hN<12;hN++){const l=(s0+hN)*30,[a,b2]=P(l,150),[c,e]=P(l,230);o+=`<line x1="${f(a)}" y1="${f(b2)}" x2="${f(c)}" y2="${f(e)}" stroke="${G}" opacity=".3"/>`;const[nx,ny]=P(l+15,138);o+=`<text x="${f(nx)}" y="${f(ny)}" text-anchor="middle" dominant-baseline="central" font-size="11" fill="${G}" opacity=".7">${hN+1}</text>`}
+ const asp=C.aspects(Object.fromEntries(Object.entries(pos).filter(([k])=>k!=="node")));
+ asp.forEach(a=>{const[x1,y1]=P(pos[a.a],150),[x2,y2]=P(pos[a.b],150);o+=`<line x1="${f(x1)}" y1="${f(y1)}" x2="${f(x2)}" y2="${f(y2)}" stroke="${a.c}" stroke-width="1.4" opacity="${(1-a.orb/10).toFixed(2)}"/>`});
+ if(ang){[["ASC",ang.asc],["DSC",ang.asc+180],["MC",ang.mc],["IC",ang.mc+180]].forEach(([n,l])=>{const[a,b2]=P(l,150),[c,e]=P(l,298),[tx,ty]=P(l,160);o+=`<line x1="${f(a)}" y1="${f(b2)}" x2="${f(c)}" y2="${f(e)}" stroke="${G2}" stroke-width="${n==="ASC"||n==="MC"?2.5:1}"/>`;if(n==="ASC"||n==="MC")o+=`<text x="${f(tx)}" y="${f(ty)}" font-size="12" fill="${G2}" text-anchor="middle" font-family="'Cormorant Garamond',serif">${n}</text>`})}
+ const order=C.BODIES.map(b=>({...b,l:pos[b.k]})).sort((a,b)=>a.l-b.l);order.forEach((b,i)=>{b.d=b.l;if(i&&b.d-order[i-1].d<8)b.d=order[i-1].d+8});
+ order.forEach(b=>{const[tx,ty]=P(b.l,245),[tx2,ty2]=P(b.l,228),[x,y]=P(b.d,204),[dx,dy]=P(b.d,176);o+=`<line x1="${f(tx)}" y1="${f(ty)}" x2="${f(tx2)}" y2="${f(ty2)}" stroke="${G2}" stroke-width="2"/><circle cx="${f(x)}" cy="${f(y)}" r="15" fill="#12211a" stroke="${G}"/><text x="${f(x)}" y="${f(y)}" text-anchor="middle" dominant-baseline="central" font-size="17" fill="${G2}" class="gl">${b.g}</text><text x="${f(dx)}" y="${f(dy)}" text-anchor="middle" dominant-baseline="central" font-size="10" fill="#b9b29d">${Math.floor(b.l%30)}°</text>`});
+ $("#wheel").innerHTML=o+"</svg>";
+ const house=l=>((C.signOf(l)-s0+12)%12)+1;
+ $("#plTable").innerHTML=`<tr><th>Planet</th><th>Sign</th><th>House</th></tr>`+(ang?`<tr><td><b>Rising</b></td><td><span class="gl">${C.SIGN_GLYPH[C.signOf(ang.asc)]}</span> ${C.SIGNS[C.signOf(ang.asc)]} ${C.fmtDeg(ang.asc)}</td><td>1</td></tr>`:"")+C.BODIES.map(b=>{const sg=C.signOf(pos[b.k]);return `<tr><td><span class="gl">${b.g}</span> ${b.n}</td><td><span class="gl">${C.SIGN_GLYPH[sg]}</span> ${C.SIGNS[sg]} ${C.fmtDeg(pos[b.k])}<div class="small">${b.m}, ${C.SIGN_WORDS[sg]}</div></td><td>${ang?house(pos[b.k]):"–"}</td></tr>`}).join("");
+ const cnt=[0,0,0,0];C.BODIES.filter(b=>b.k!=="node").forEach(b=>cnt[C.signOf(pos[b.k])%4]++);
+ $("#elems").innerHTML=C.SIGN_ELEMENT.map((e,i)=>`<div style="display:grid;grid-template-columns:70px 1fr 24px;gap:10px;align-items:center;margin:6px 0"><span class="small">${e}</span><div class="bar" style="width:${cnt[i]*10}%;background:${EL[i]}"></div><b style="color:var(--gold2)">${cnt[i]}</b></div>`).join("")}
+const HDPOS={head:[150,48],ajna:[150,112],throat:[150,195],g:[150,282],heart:[212,318],spleen:[46,392],sp:[254,392],sacral:[150,392],root:[150,482]};
+const HDCOL={head:"#f5d66b",ajna:"#6fbf73",throat:"#c8a26b",g:"#f5d66b",heart:"#e5483f",sacral:"#e5483f",sp:"#c8a26b",spleen:"#c8a26b",root:"#c8a26b"};
+function renderHD(C,hd){let o=`<svg viewBox="0 0 300 530" role="img" aria-label="Human Design bodygraph">`;const pairs={};
+ C.CHANNELS.forEach(([a,b])=>{const k=[C.centerOf(a),C.centerOf(b)].sort().join("-");(pairs[k]=pairs[k]||[]).push([a,b])});
+ Object.entries(pairs).forEach(([k,list])=>{const[c1,c2]=k.split("-"),[x1,y1]=HDPOS[c1],[x2,y2]=HDPOS[c2],L=Math.hypot(x2-x1,y2-y1),nx=-(y2-y1)/L,ny=(x2-x1)/L;
+  list.forEach(([a,b],i)=>{const off=(i-(list.length-1)/2)*8,on=hd.chans.some(c=>c[0]===a&&c[1]===b),ha=hd.gates.has(a),hb=hd.gates.has(b);
+   const X1=x1+nx*off,Y1=y1+ny*off,X2=x2+nx*off,Y2=y2+ny*off,mx=(X1+X2)/2,my=(Y1+Y2)/2;
+   o+=`<line x1="${X1}" y1="${Y1}" x2="${X2}" y2="${Y2}" stroke="#2a3a30" stroke-width="5"/>`;
+   const ga=C.centerOf(a)===c1?[X1,Y1]:[X2,Y2],gb=C.centerOf(b)===c1?[X1,Y1]:[X2,Y2];
+   if(ha)o+=`<line x1="${ga[0]}" y1="${ga[1]}" x2="${mx}" y2="${my}" stroke="${on?G2:"#9a7f3c"}" stroke-width="5"/>`;
+   if(hb)o+=`<line x1="${gb[0]}" y1="${gb[1]}" x2="${mx}" y2="${my}" stroke="${on?G2:"#9a7f3c"}" stroke-width="5"/>`})});
+ const shp={head:"M150 14 L112 70 L188 70Z",ajna:"M112 88 L188 88 L150 140Z",throat:"M122 168 h56 v56 h-56Z",g:"M150 244 L188 282 L150 320 L112 282Z",heart:"M194 330 L232 330 L214 300Z",spleen:"M16 352 L16 432 L80 392Z",sp:"M284 352 L284 432 L220 392Z",sacral:"M118 362 h64 v62 h-64Z",root:"M118 452 h64 v60 h-64Z"};
+ Object.entries(shp).forEach(([c,d])=>{const def=hd.defined.has(c);o+=`<path d="${d}" fill="${def?HDCOL[c]:"#0f1c16"}" stroke="${def?"#fff6d8":G}" stroke-width="${def?2:1.4}"${def?` filter="url(#hdg)"`:""}/>`});
+ o=o.replace(`<svg viewBox="0 0 300 530" role="img" aria-label="Human Design bodygraph">`,`<svg viewBox="0 0 300 530" role="img" aria-label="Human Design bodygraph"><defs><filter id="hdg" x="-.3" y="-.3" width="1.6" height="1.6"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#f6dc8f" flood-opacity=".5"/></filter></defs>`);
+ $("#bodygraph").innerHTML=o+"</svg>";
+ $("#hdSum").innerHTML=[["Type",hd.type],["Strategy",hd.strategy],["Inner authority",hd.authority],["Profile",hd.profile],["Definition",hd.definition],["Signature",hd.signature],["Not-self theme",hd.notSelf],["Cross gates",hd.cross],["Defined centers",[...hd.defined].map(c=>C.CENTERS[c].n).join(", ")||"None"]].map(([l,v])=>`<div class="stat"><span class="small">${l}</span><b>${esc(v)}</b></div>`).join("");
+ const GL={sun:"☉",earth:"⊕",moon:"☽",node:"☊",snode:"☋",mercury:"☿",venus:"♀",mars:"♂",jupiter:"♃",saturn:"♄",uranus:"♅",neptune:"♆",pluto:"♇"};
+ const col=(t,L,c)=>`<div><div class="lbl" style="color:${c}">${t}</div>${L.map(a=>`<span><span><span class="gl" style="font-size:16px">${GL[a.k]}︎</span> ${a.n}</span><b style="color:${c}">${a.gate}.${a.line}</b></span>`).join("")}</div>`;
+ $("#hdActs").innerHTML=col("Design (unconscious)",hd.des,"#e5483f")+col("Personality (conscious)",hd.pers,G2)}
+
+/* ================= start ================= */
+$("#scene").innerHTML=master();setLids(lidBase);tune();setMute(false);voiceUI();doors();freqs();menu();
+const ro=new ResizeObserver(size);ro.observe(cv);size();
+if(RM)frame();else requestAnimationFrame(frame);
+setTimeout(blink,2500);
+addEventListener("hashchange",route);route();
+}
+</script>
+</body>
+</html>
